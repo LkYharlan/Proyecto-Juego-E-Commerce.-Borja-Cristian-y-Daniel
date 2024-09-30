@@ -7,9 +7,10 @@ class Enemy {
     this.ejeX = 984;
     this.ejeY = randomSpot;
     this.directionY = 0;
-    this.directionX = 0;
+    this.directionX = -1;
     this.health = 1;
     this.sprite = document.createElement("div");
+    this.interval= setInterval(this.movement.bind(this), 50)
   }
 
   insert() {
@@ -25,7 +26,6 @@ class Enemy {
   movement() {
     let newAxisY = this.ejeY + this.speed * this.directionY;
     let newAxisX = this.ejeX + this.speed * this.directionX;
-
     if (
       newAxisX >= 0 &&
       newAxisX < 1024 - this.width &&
@@ -45,10 +45,10 @@ class Enemy {
       }
       this.ejeX = newAxisX;
       this.sprite.style.left = this.ejeX + "px";
-      this.hitbox()
-      if(this.ejeX <= 0){
-        basicEnemy.remove()
-      }
+      this.hitbox();
+      if (this.ejeX <= 0) {
+        this.sprite.remove();
+      } 
     }
   }
 
@@ -60,14 +60,14 @@ class Enemy {
       this.ejeY + this.height > playerCharacter.ejeY
     ) {
       console.log("collision detected!");
-      this.remove()
-      playerCharacter.lives --;
-      playerCharacter.remove()
-       }
+      this.remove();
+      playerCharacter.lives--;
+      playerCharacter.remove();
+    }
   }
 
-  remove(){
-   playField.removeChild(this.sprite)
-   clearInterval(randomTimer)
+  remove() {
+    playField.removeChild(this.sprite);
+    clearInterval(this.interval);
   }
 }

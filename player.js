@@ -1,17 +1,16 @@
 console.log("Clase player load!!");
 
 class Player {
-  constructor(x, y) {
+  constructor() {
     this.width = 40;
     this.height = 40;
     this.speed = 10;
-    this.ejeX = x;
-    this.ejeY = y;
+    this.ejeX = 90;
+    this.ejeY = 265;
     this.directionY = 0;
-    this.lives = 1;
+    this.lives = 3;
     this.damage = 1;
     this.sprite = document.createElement("div");
-    
   }
 
   insert() {
@@ -22,7 +21,6 @@ class Player {
     this.sprite.style.left = this.ejeX + "px";
     this.sprite.style.position = "absolute";
     playField.appendChild(this.sprite);
-    
   }
 
   movement() {
@@ -32,25 +30,23 @@ class Player {
       this.ejeY = newAxisY;
       this.sprite.style.top = this.ejeY + "px";
     }
-    this.hitbox()
+    this.hitbox();
   }
 
   hitbox() {
     if (
-      this.ejeX < basicEnemy.ejeX + basicEnemy.width &&
-      this.ejeY < basicEnemy.ejeY + basicEnemy.height &&
-      this.ejeX + this.width > basicEnemy.ejeX &&
-      this.ejeY + this.height > basicEnemy.ejeY
+      this.ejeX < repeatEnemy.ejeX + repeatEnemy.width &&
+      this.ejeY < repeatEnemy.ejeY + repeatEnemy.height &&
+      this.ejeX + this.width > repeatEnemy.ejeX &&
+      this.ejeY + this.height > repeatEnemy.ejeY
     ) {
       console.log("collision detected!2");
-     
     }
   }
 
-  remove(){
-   if(this.lives == 0){
-    playField.removeChild(this.sprite)
-   } 
+  remove() {
+    if (this.lives == 0) {
+      playField.removeChild(this.sprite);
+    }
   }
-
 }

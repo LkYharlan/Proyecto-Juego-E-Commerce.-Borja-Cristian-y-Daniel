@@ -1,17 +1,18 @@
-console.log("Script load!!");
-
 let playField = document.getElementById("playField");
 
-let playerCharacter = new Player(90, 265);
+let enemiesArray = []
+
+let playerCharacter = new Player();
 playerCharacter.insert();
 
-let basicEnemy = new Enemy(984, 265);
-basicEnemy.insert()
+let basicEnemy
 
-let randomTimer = setInterval(function(){
-    basicEnemy.directionX = -1
-    basicEnemy.movement()
-}, 100)
+ let repeatEnemy = setInterval(function(){
+    basicEnemy = new Enemy ()
+    basicEnemy.insert()
+    enemiesArray.push(basicEnemy)
+}, 1000)
+
 
 
 let movePrompt = window.addEventListener("keydown", function (event) {
