@@ -11,6 +11,7 @@ class Player {
     this.lives = 3;
     this.damage = 1;
     this.sprite = document.createElement("div");
+    
   }
 
   insert() {
@@ -21,6 +22,7 @@ class Player {
     this.sprite.style.left = this.ejeX + "px";
     this.sprite.style.position = "absolute";
     playField.appendChild(this.sprite);
+    this.hitbox()
   }
 
   movement() {
@@ -31,4 +33,16 @@ class Player {
       this.sprite.style.top = this.ejeY + "px";
     }
   }
+
+  hitbox(){
+    if (
+      this.x < playerCharacter.x + playerCharacter.width &&
+      this.y < playerCharacter.y + playerCharacter.height &&
+      this.x + this.width > playerCharacter.x &&
+      this.y + this.height > playerCharacter.y
+    ) {
+      console.log("collision detected!");
+    } 
+  }
+
 }

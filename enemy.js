@@ -1,11 +1,11 @@
 class Enemy {
   constructor() {
-      this.width = 40;
-      this.height = 40;
-      this.speed = 12;
-      //let randomSpot = Math.floor(Math.random() * 540);
-      this.ejeX = 984;
-      this.ejeY = randomSpot;
+    this.width = 40;
+    this.height = 40;
+    this.speed = 12;
+    let randomSpot = Math.floor(Math.random() * 510);
+    this.ejeX = 984;
+    this.ejeY = randomSpot;
     this.directionY = 0;
     this.directionX = 0;
     this.health = 1;
@@ -26,15 +26,43 @@ class Enemy {
     let newAxisY = this.ejeY + this.speed * this.directionY;
     let newAxisX = this.ejeX + this.speed * this.directionX;
 
-    if (newAxisX >= 0 && newAxisX < 1024 - this.width && newAxisY >= 0 && newAxisY <= 560 - this.height) {
+    if (
+      newAxisX >= 0 &&
+      newAxisX < 1024 - this.width &&
+      newAxisY >= 0 &&
+      newAxisY <= 560 - this.height
+    ) {
       let randomVertical = Math.ceil(Math.random() * 10);
       for (let i = 0; i < 10; i++) {
-        if (newAxisX >= 0 && newAxisX < 1024 - this.width && newAxisY >= 0 && newAxisY <= 560 - this.height){
-        this.sprite.style.top = this.ejeY + randomVertical + "px";
+        if (
+          newAxisX >= 0 &&
+          newAxisX < 1024 - this.width &&
+          newAxisY >= 0 &&
+          newAxisY <= 560 - this.height
+        ) {
+          this.sprite.style.top = this.ejeY + randomVertical + "px";
         }
       }
       this.ejeX = newAxisX;
       this.sprite.style.left = this.ejeX + "px";
+      this.hitbox()
     }
+  }
+
+  hitbox() {
+    if (
+      this.ejeX < playerCharacter.ejeX + playerCharacter.width &&
+      this.ejeY < playerCharacter.ejeY + playerCharacter.height &&
+      this.ejeX + this.width > playerCharacter.ejeX &&
+      this.ejeY + this.height > playerCharacter.ejeY
+    ) {
+      console.log("collision detected!");
+      this.remove()
+    }
+  }
+
+  remove(){
+   playField.removeChild(this.sprite)
+   clearInterval(randomTimer)
   }
 }

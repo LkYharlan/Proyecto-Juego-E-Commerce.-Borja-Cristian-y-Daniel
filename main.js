@@ -8,7 +8,7 @@ playerCharacter.insert();
 let basicEnemy = new Enemy(984, 265);
 basicEnemy.insert()
 
-setInterval(function(){
+let randomTimer = setInterval(function(){
     basicEnemy.directionX = -1
     basicEnemy.movement()
 }, 100)
