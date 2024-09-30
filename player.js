@@ -47,6 +47,7 @@ class Player {
   remove() {
     if (this.lives == 0) {
       playField.removeChild(this.sprite);
+      clearInterval(repeatEnemy)
     }
   }
 }
