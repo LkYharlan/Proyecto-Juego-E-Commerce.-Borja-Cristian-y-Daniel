@@ -46,6 +46,9 @@ class Enemy {
       this.ejeX = newAxisX;
       this.sprite.style.left = this.ejeX + "px";
       this.hitbox()
+      if(this.ejeX <= 0){
+        basicEnemy.remove()
+      }
     }
   }
 
@@ -58,7 +61,9 @@ class Enemy {
     ) {
       console.log("collision detected!");
       this.remove()
-    }
+      playerCharacter.lives --;
+      playerCharacter.remove()
+       }
   }
 
   remove(){

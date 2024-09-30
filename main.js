@@ -26,3 +26,14 @@ let movePrompt = window.addEventListener("keydown", function (event) {
       break;
   }
 });
+
+let moveClearInter = window.addEventListener( "keyup", function(event){
+    playerCharacter.directionY = 0;
+})
+
+movePlayerInterval = setInterval( function () {
+    playerCharacter.movement()
+}, 100);
+
+
+
