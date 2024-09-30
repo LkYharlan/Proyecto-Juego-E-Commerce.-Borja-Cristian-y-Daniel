@@ -21,4 +21,11 @@ class Player {
     this.sprite.style.position = "absolute";
     playField.appendChild(this.sprite);
   }
+
+  movement(){
+    this.ejeY = this.ejeY + this.speed * this.directionY
+    this.sprite.style.top = this.ejeY + "px"
+  }
+
+
 }
