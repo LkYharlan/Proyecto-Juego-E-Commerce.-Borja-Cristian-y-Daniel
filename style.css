@@ -1,0 +1,15 @@
+#playfield{
+    position: relative;
+    background-color: rgb(9, 9, 34);
+    width: 1024px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+#score{
+    position: absolute;
+    width: 1024px;
+    height: 40px; 
+    background-color: aquamarine;
+    top: 560px
+}
