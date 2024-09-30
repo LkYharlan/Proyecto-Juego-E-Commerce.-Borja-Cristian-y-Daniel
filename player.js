@@ -2,13 +2,14 @@ console.log("Clase player load!!");
 
 class Player {
   constructor(x, y) {
-    this.width = 50;
-    this.height = 50;
+    this.width = 40;
+    this.height = 40;
     this.speed = 10;
     this.ejeX = x;
     this.ejeY = y;
     this.directionY = 0;
     this.lives = 3;
+    this.damage = 1;
     this.sprite = document.createElement("div");
   }
 
@@ -25,7 +26,7 @@ class Player {
   movement() {
     let newAxisY = this.ejeY + this.speed * this.directionY;
 
-    if (newAxisY >= 0 && newAxisY < 560 - this.width) {
+    if (newAxisY >= 0 && newAxisY <= 560 - this.width) {
       this.ejeY = newAxisY;
       this.sprite.style.top = this.ejeY + "px";
     }
