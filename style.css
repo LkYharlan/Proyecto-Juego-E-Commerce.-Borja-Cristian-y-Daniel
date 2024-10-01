@@ -72,13 +72,44 @@ body {
 }
 
 #player {
-    background-color: rgb(34, 188, 226);
+    padding: 20px;
+    background-image: url("/assets/player.png");
+    background-repeat:no-repeat;
+    background-size:  80px;
+    
 }
 
 .basicEnemy {
-    background-color: red;
+padding: 20px;
+    background-image: url("/assets/Enemy1.1.png");
+    background-repeat: no-repeat;
+    background-size: 80px;
 }
 
 .proyectile {
-    background-color: yellow;
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    animation-name: shot;
+    animation-duration: 2s;
+
+}
+
+
+
+@keyframes shot {
+    0% {
+        background-image: url("/assets/player_shot/shot4_2.png");
+    }
+
+    100% {
+        background-image: url("/assets/player_shot/shot4_3.png");
+            
+    }
+
+ 
+
+
+    
 }

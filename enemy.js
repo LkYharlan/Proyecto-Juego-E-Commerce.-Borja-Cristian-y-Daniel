@@ -3,8 +3,8 @@ class Enemy {
     this.width = 40;
     this.height = 40;
     this.speed = 12;
-    let randomSpot = Math.floor(Math.random() * 510);
-    this.ejeX = 984;
+    let randomSpot = Math.floor(Math.random() * 500);
+    this.ejeX = 900;
     this.ejeY = randomSpot;
     this.directionY = 0;
     this.directionX = -1;
@@ -27,7 +27,7 @@ class Enemy {
     let newAxisY = this.ejeY + this.speed * this.directionY;
     let newAxisX = this.ejeX + this.speed * this.directionX;
     if (
-      newAxisX >= 0 &&
+      newAxisX >= -1 &&
       newAxisX < 1024 - this.width &&
       newAxisY >= 0 &&
       newAxisY <= 560 - this.height
