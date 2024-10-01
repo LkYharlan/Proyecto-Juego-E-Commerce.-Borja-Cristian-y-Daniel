@@ -26,7 +26,7 @@ class Player {
   movement() {
     let newAxisY = this.ejeY + this.speed * this.directionY;
 
-    if (newAxisY >= 0 && newAxisY <= 560 - this.width) {
+    if (newAxisY >= 0 && newAxisY <= 540 - this.width) {
       this.ejeY = newAxisY;
       this.sprite.style.top = this.ejeY + "px";
     }
