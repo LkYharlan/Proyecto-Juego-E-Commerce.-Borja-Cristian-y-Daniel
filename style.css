@@ -1,4 +1,4 @@
-#playField{
+#startScreen {
     position: relative;
     background-color: rgb(9, 9, 34);
     width: 1024px;
@@ -6,22 +6,55 @@
     margin: 0 auto;
 }
 
-#score{
+h1{
+    color: aqua;
+    margin: 0;
+    font-size: 163px
+}
+
+#gameOverButton{
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: 412px;
+    top: 450px;
+}
+
+#gameOverScreen {
+    position: relative;
+    background-color: rgb(9, 9, 34);
+    width: 1024px;
+    height: 600px;
+    margin: 0 auto;
+    display: none;
+}
+
+
+#playField {
+    position: relative;
+    background-color: rgb(9, 9, 34);
+    width: 1024px;
+    height: 600px;
+    margin: 0 auto;
+    display: none;
+}
+
+.score {
     position: absolute;
     width: 1024px;
-    height: 40px; 
+    height: 40px;
     background-color: aquamarine;
     top: 560px
 }
 
-#player{
+#player {
     background-color: rgb(34, 188, 226);
 }
 
-.basicEnemy{
+.basicEnemy {
     background-color: red;
 }
 
-.proyectile{
+.proyectile {
     background-color: yellow;
 }

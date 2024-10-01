@@ -30,24 +30,26 @@ class Player {
       this.ejeY = newAxisY;
       this.sprite.style.top = this.ejeY + "px";
     }
-    this.hitbox();
+   // this.hitbox();
   }
 
-  hitbox() {
+/*   hitbox() {
     if (
       this.ejeX < repeatEnemy.ejeX + repeatEnemy.width &&
       this.ejeY < repeatEnemy.ejeY + repeatEnemy.height &&
       this.ejeX + this.width > repeatEnemy.ejeX &&
       this.ejeY + this.height > repeatEnemy.ejeY
     ) {
-      console.log("collision detected!2");
     }
-  }
+  } */
 
   remove() {
     if (this.lives == 0) {
       playField.removeChild(this.sprite);
-      clearInterval(repeatEnemy)
+      clearInterval(repeatEnemy);
+
+      playField.style.display = "none";
+      gameOverScreen.style.display = "block";
     }
   }
 }
