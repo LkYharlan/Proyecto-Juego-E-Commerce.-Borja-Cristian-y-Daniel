@@ -23,7 +23,6 @@ function startGame() {
   gameplaySong.loop = true
   gameplaySong.volume = 0.3
 
-  playerCharacter.speed = 10;
   playerCharacter.ejeX = 90;
   playerCharacter.ejeY = 265;
   playerCharacter.lives = 3;     

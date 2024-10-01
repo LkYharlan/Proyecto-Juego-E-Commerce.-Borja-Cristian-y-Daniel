@@ -44,13 +44,12 @@ class Player {
       gameplaySong.currentTime = 0;
       gameOverSong.volume = 0.4
       gameOverSong.play()
-      
+
       playField.removeChild(this.sprite);
       clearInterval(repeatEnemy);
+      clearInterval(movePlayerInterval);
       clearInterval(repeatMeteorite);
       setTimeout(gameOver, 4000);
-      /* gameOver(); */
-
     }
   }
 }
