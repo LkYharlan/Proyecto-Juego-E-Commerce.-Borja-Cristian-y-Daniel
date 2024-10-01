@@ -8,9 +8,8 @@ class Enemy {
     this.ejeY = randomSpot;
     this.directionY = 0;
     this.directionX = -1;
-    this.health = 1;
     this.sprite = document.createElement("div");
-    this.interval = setInterval(this.movement.bind(this), 50)
+    this.interval = setInterval(this.movement.bind(this), 45)
   }
 
   insert() {
@@ -24,25 +23,8 @@ class Enemy {
   }
 
   movement() {
-    let newAxisY = this.ejeY + this.speed * this.directionY;
     let newAxisX = this.ejeX + this.speed * this.directionX;
-    if (
-      newAxisX >= -1 &&
-      newAxisX < 1024 - this.width &&
-      newAxisY >= 0 &&
-      newAxisY <= 560 - this.height
-    ) {
-      let randomVertical = Math.ceil(Math.random() * 10);
-      for (let i = 0; i < 10; i++) {
-        if (
-          newAxisX >= 0 &&
-          newAxisX < 1024 - this.width &&
-          newAxisY >= 0 &&
-          newAxisY <= 560 - this.height
-        ) {
-          this.sprite.style.top = this.ejeY + randomVertical + "px";
-        }
-      }
+    if (newAxisX >= -1 && newAxisX < 1024 - this.width) {
       this.ejeX = newAxisX;
       this.sprite.style.left = this.ejeX + "px";
       this.hitbox();
@@ -51,21 +33,22 @@ class Enemy {
       }
     }
   }
-  
+
   hitbox() {
-      if (this.ejeX < playerCharacter.ejeX + playerCharacter.width &&
-        this.ejeY < playerCharacter.ejeY + playerCharacter.height &&
-        this.ejeX + this.width > playerCharacter.ejeX &&
-        this.ejeY + this.height > playerCharacter.ejeY
-      ) {
-        this.remove();
-        playerCharacter.lives--;
-        playerCharacter.remove();
-      }
+    if (this.ejeX < playerCharacter.ejeX + playerCharacter.width &&
+      this.ejeY < playerCharacter.ejeY + playerCharacter.height &&
+      this.ejeX + this.width > playerCharacter.ejeX &&
+      this.ejeY + this.height > playerCharacter.ejeY
+    ) {
+      this.remove();
+      playerCharacter.lives--;
+      playerCharacter.remove();
+    }
   }
 
   remove() {
-    console.log(this.sprite);
+    enemyExplotionSound.currentTime = 0
+    enemyExplotionSound.play();
     playField.removeChild(this.sprite);
     clearInterval(this.interval);
   }

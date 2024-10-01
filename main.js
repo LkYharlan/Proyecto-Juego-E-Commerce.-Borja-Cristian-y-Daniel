@@ -4,11 +4,25 @@ let enemiesArray = []
 let proyectile
 let basicEnemy
 let repeatEnemy
+let repeatMeteorite
 let movePrompt
 let moveClearInter
 let playerCharacter = new Player();
 
+let gameOverSong = new Audio("./assets/gameover_song.mp3")
+let gameplaySong = new Audio("./assets/gameplay_song.mp3")
+let proyectileSound = new Audio("./assets/laser_player.mp3")
+let playerExplotionSound = new Audio("./assets/player_explotion.mp3")
+let enemyExplotionSound = new Audio("./assets/enemy_explotion.mp3")
+
 function startGame() {
+  gameOverSong.pause()
+  gameOverSong.currentTime = 0
+
+  gameplaySong.play()
+  gameplaySong.loop = true
+  gameplaySong.volume = 0.3
+
   playerCharacter.speed = 10;
   playerCharacter.ejeX = 90;
   playerCharacter.ejeY = 265;
@@ -21,22 +35,30 @@ function startGame() {
     enemiesArray.push(basicEnemy)
   }, 1000)
 
+  repeatMeteorite = setInterval(function () {
+    let meteorite = new Meteorite();
+    meteorite.insert();
+
+  }, 6000)
+
   movePrompt = window.addEventListener("keydown", controls);
 
   moveClearInter = window.addEventListener("keyup", function (event) {
     playerCharacter.directionY = 0;
+    playerCharacter.directionX = 0
   })
 
   movePlayerInterval = setInterval(function () {
     playerCharacter.movement()
-  }, 100);
+  }, 30);
 }
 
 function shootingCannon() {
-  console.log(this)
   proyectile = new Proyectile();
   proyectile.insert();
   proyectile.shooting();
+  proyectileSound.currentTime = 0;
+  proyectileSound.play();
 }
 
 function controls(event) {
@@ -49,8 +71,15 @@ function controls(event) {
       playerCharacter.directionY = 1;
       playerCharacter.movement();
       break;
+    case "a":
+      playerCharacter.directionX = -1;
+      playerCharacter.movement();
+      break;
+    case "d":
+      playerCharacter.directionX = 1;
+      playerCharacter.movement();
+      break;
     case " ":
-      console.log("vaya vaya")
       shootingCannon();
       proyectile.shootingSpeed = 30;   
       break;

@@ -2,6 +2,7 @@ body {
     font-family: "VT323", monospace;
     font-weight: 400;
     font-style: normal;
+    background-color: rgb(48, 48, 48);
 }
 
 #startScreen {
@@ -10,6 +11,7 @@ body {
     width: 1024px;
     height: 600px;
     margin: 0 auto;
+    top: 150px;
 }
 
 #startGameText {
@@ -34,14 +36,24 @@ body {
     height: 50px;
     left: 412px;
     top: 380px;
+    background-color: aqua;
+}
+
+#startButton:hover{
+    background-color: rgb(227, 243, 83);
 }
 
 #gameOverButton {
+    background-color: aqua;
     position: absolute;
     width: 200px;
     height: 50px;
     left: 412px;
     top: 380px;
+}
+
+#gameOverButton:hover{
+    background-color: rgb(227, 243, 83);
 }
 
 #gameOverScreen {
@@ -50,6 +62,7 @@ body {
     width: 1024px;
     height: 600px;
     margin: 0 auto;
+    top: 150px;
     display: none;
 }
 
@@ -60,6 +73,7 @@ body {
     width: 1024px;
     height: 600px;
     margin: 0 auto;
+    top: 150px;
     display: none;
 }
 
@@ -74,26 +88,31 @@ body {
 #player {
     padding: 20px;
     background-image: url("/assets/player.png");
-    background-repeat:no-repeat;
-    background-size:  80px;
-    
+    background-repeat: no-repeat;
+    background-size: 80px;
+
 }
 
 .basicEnemy {
-padding: 20px;
+    padding: 20px;
     background-image: url("/assets/Enemy1.1.png");
     background-repeat: no-repeat;
     background-size: 80px;
 }
 
+.meteorite {
+    padding: 20px;
+    background-image: url("/assets/meteorite.png");
+    background-repeat: no-repeat;
+    background-size: 49px;
+}
+
 .proyectile {
-   
     background-size: cover;
     background-repeat: no-repeat;
     padding: 20px;
     animation-name: shot;
-    animation-duration: 2s;
-
+    animation-duration: 1.5s;
 }
 
 
@@ -102,14 +121,7 @@ padding: 20px;
     0% {
         background-image: url("/assets/player_shot/shot4_2.png");
     }
-
     100% {
         background-image: url("/assets/player_shot/shot4_3.png");
-            
     }
-
- 
-
-
-    
 }

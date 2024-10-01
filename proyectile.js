@@ -25,7 +25,7 @@ class Proyectile {
 
   shooting() {
     let newAxisX = this.ejeX + this.shootingSpeed * this.directionX;
-    if (newAxisX > 0 && newAxisX < 1050) {
+    if (newAxisX > 0 && newAxisX <= 1050 - this.width) {
       this.ejeX = newAxisX;
       this.sprite.style.left = this.ejeX + "px";
       let self = this
@@ -48,6 +48,8 @@ class Proyectile {
     ) {
       enemiesArray.splice(index, 1)
       enemy.remove();
+      playerCharacter.score ++
+      console.log(playerCharacter.score)
       self.remove()
     }
   })
