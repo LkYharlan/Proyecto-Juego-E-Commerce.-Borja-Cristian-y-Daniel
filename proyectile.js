@@ -23,16 +23,34 @@ class Proyectile {
     playField.appendChild(this.sprite);
   }
 
-  shooting(){
+  shooting() {
     let newAxisX = this.ejeX + this.shootingSpeed * this.directionX;
     if (newAxisX > 0 && newAxisX < 1050) {
       this.ejeX = newAxisX;
       this.sprite.style.left = this.ejeX + "px";
-      //this.hitbox();
-      if (this.ejeX >= 1024 -  this.width) {
-        this.sprite.remove();
-      }
+      let self = this
+      this.hitbox(self)
     }
+    if (this.ejeX >= 1024 - this.width) {
+      this.sprite.remove();
+    }
+    
+  }
+
+   hitbox(self) {
+     enemiesArray.forEach(function (enemy, index) {
+  
+    if (
+      enemy.ejeX < self.ejeX + self.width &&
+      enemy.ejeY < self.ejeY + self.height &&
+      enemy.ejeX + enemy.width > self.ejeX &&
+      enemy.ejeY + enemy.height > self.ejeY
+    ) {
+      enemiesArray.splice(index, 1)
+      enemy.remove();
+      self.remove()
+    }
+  })
   }
 
   remove() {

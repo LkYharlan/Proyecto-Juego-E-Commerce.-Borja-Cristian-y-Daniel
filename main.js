@@ -5,7 +5,7 @@ let enemiesArray = []
 let playerCharacter = new Player();
 playerCharacter.insert();
 
-let proyectile 
+let proyectile
 
 let basicEnemy
 
@@ -16,8 +16,8 @@ let basicEnemy
 }, 1000)
 
 
-
 let movePrompt = window.addEventListener("keydown", function (event) {
+
   switch (event.key.toLowerCase()) {
     case "w":
       playerCharacter.directionY = -1;

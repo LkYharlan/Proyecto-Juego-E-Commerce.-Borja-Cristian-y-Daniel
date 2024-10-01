@@ -10,7 +10,7 @@ class Enemy {
     this.directionX = -1;
     this.health = 1;
     this.sprite = document.createElement("div");
-    this.interval= setInterval(this.movement.bind(this), 50)
+    this.interval = setInterval(this.movement.bind(this), 50)
   }
 
   insert() {
@@ -48,22 +48,20 @@ class Enemy {
       this.hitbox();
       if (this.ejeX <= 0) {
         this.sprite.remove();
-      } 
+      }
     }
   }
-
+  
   hitbox() {
-    if (
-      this.ejeX < playerCharacter.ejeX + playerCharacter.width &&
-      this.ejeY < playerCharacter.ejeY + playerCharacter.height &&
-      this.ejeX + this.width > playerCharacter.ejeX &&
-      this.ejeY + this.height > playerCharacter.ejeY
-    ) {
-      console.log("collision detected!");
-      this.remove();
-      playerCharacter.lives--;
-      playerCharacter.remove();
-    }
+      if (this.ejeX < playerCharacter.ejeX + playerCharacter.width &&
+        this.ejeY < playerCharacter.ejeY + playerCharacter.height &&
+        this.ejeX + this.width > playerCharacter.ejeX &&
+        this.ejeY + this.height > playerCharacter.ejeY
+      ) {
+        this.remove()
+        playerCharacter.lives--;
+        playerCharacter.remove();
+      }
   }
 
   remove() {
