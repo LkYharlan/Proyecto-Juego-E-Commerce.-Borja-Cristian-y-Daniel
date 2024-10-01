@@ -3,14 +3,14 @@ class Proyectile {
     this.width = 10;
     this.height = 10;
     this.speed = 10;
-    this.shootingSpeed = 30
+    this.shootingSpeed = 30;
     this.ejeX = playerCharacter.ejeX + playerCharacter.width / 2;
     this.ejeY = playerCharacter.ejeY + playerCharacter.height / 2;
-    this.directionY = 0
+    this.directionY = 0;
     this.directionX = 1;
     this.damage = 1;
     this.sprite = document.createElement("div");
-    this.interval = setInterval(this.shooting.bind(this), 50)
+    this.interval = setInterval(this.shooting.bind(this), 50);
   }
 
   insert() {

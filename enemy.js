@@ -58,13 +58,14 @@ class Enemy {
         this.ejeX + this.width > playerCharacter.ejeX &&
         this.ejeY + this.height > playerCharacter.ejeY
       ) {
-        this.remove()
+        this.remove();
         playerCharacter.lives--;
         playerCharacter.remove();
       }
   }
 
   remove() {
+    console.log(this.sprite);
     playField.removeChild(this.sprite);
     clearInterval(this.interval);
   }

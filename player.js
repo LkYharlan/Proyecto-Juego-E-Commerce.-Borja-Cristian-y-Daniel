@@ -30,26 +30,15 @@ class Player {
       this.ejeY = newAxisY;
       this.sprite.style.top = this.ejeY + "px";
     }
-   // this.hitbox();
   }
-
-/*   hitbox() {
-    if (
-      this.ejeX < repeatEnemy.ejeX + repeatEnemy.width &&
-      this.ejeY < repeatEnemy.ejeY + repeatEnemy.height &&
-      this.ejeX + this.width > repeatEnemy.ejeX &&
-      this.ejeY + this.height > repeatEnemy.ejeY
-    ) {
-    }
-  } */
 
   remove() {
     if (this.lives == 0) {
       playField.removeChild(this.sprite);
       clearInterval(repeatEnemy);
+      setTimeout(gameOver, 3000)
+      /* gameOver(); */
 
-      playField.style.display = "none";
-      gameOverScreen.style.display = "block";
     }
   }
 }

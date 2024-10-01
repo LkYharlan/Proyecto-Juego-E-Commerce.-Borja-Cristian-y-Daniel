@@ -1,3 +1,9 @@
+body {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
 #startScreen {
     position: relative;
     background-color: rgb(9, 9, 34);
@@ -6,18 +12,36 @@
     margin: 0 auto;
 }
 
-h1{
-    color: aqua;
+#startGameText {
+    color: rgb(227, 243, 83);
+    font-size: 80px;
+    text-align: center;
+    padding-top: 70px;
     margin: 0;
-    font-size: 163px
 }
 
-#gameOverButton{
+#gameOverText {
+    color: aqua;
+    text-align: center;
+    margin: 0;
+    font-size: 163px;
+    padding-top: 70px;
+}
+
+#startButton {
     position: absolute;
     width: 200px;
     height: 50px;
     left: 412px;
-    top: 450px;
+    top: 380px;
+}
+
+#gameOverButton {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: 412px;
+    top: 380px;
 }
 
 #gameOverScreen {
