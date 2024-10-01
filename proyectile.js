@@ -7,9 +7,10 @@ class Proyectile {
     this.ejeX = playerCharacter.ejeX + playerCharacter.width / 2;
     this.ejeY = playerCharacter.ejeY + playerCharacter.height / 2;
     this.directionY = 0
-    this.directionX = 0;
+    this.directionX = 1;
     this.damage = 1;
     this.sprite = document.createElement("div");
+    this.interval = setInterval(this.shooting.bind(this), 50)
   }
 
   insert() {
@@ -22,16 +23,21 @@ class Proyectile {
     playField.appendChild(this.sprite);
   }
 
-  movement() {
-    let newAxisY = this.ejeY + this.speed * this.directionY;
-
-    if (newAxisY >= 0 && newAxisY <= 560 - this.width) {
-      this.ejeY = newAxisY;
-      this.sprite.style.top = this.ejeY + "px";
+  shooting(){
+    let newAxisX = this.ejeX + this.shootingSpeed * this.directionX;
+    if (newAxisX > 0 && newAxisX < 1050) {
+      this.ejeX = newAxisX;
+      this.sprite.style.left = this.ejeX + "px";
+      //this.hitbox();
+      if (this.ejeX >= 1024 -  this.width) {
+        this.sprite.remove();
+      }
     }
   }
 
-  shooting(){
-    
+  remove() {
+    playField.removeChild(this.sprite);
+    clearInterval(this.interval);
   }
 }
+
