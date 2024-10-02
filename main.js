@@ -1,5 +1,6 @@
 let playField = document.getElementById("playField");
 let scoreDiv = document.getElementById("score");
+let finalScoreDiv = document.getElementById("finalScore");
 let playerLifes = document.getElementById("lifes");
 
 let enemiesArray = []
@@ -12,6 +13,7 @@ let moveClearInter
 let playerCharacter = new Player();
 
 scoreDiv.innerText = `Score: ${Player.score}`;
+
 
 
 let gameOverSong = new Audio("./assets/gameover_song.mp3")

@@ -71,6 +71,7 @@ class Player {
       playField.removeChild(this.sprite);
       playField.removeChild(this.engine);
       this.explotion.style.display = "block"
+      finalScoreDiv.innerText = `Final Score: ${Player.score}`
       clearInterval(repeatEnemy);
       clearInterval(movePlayerInterval);
       clearInterval(repeatMeteorite);
