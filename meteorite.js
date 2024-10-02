@@ -30,7 +30,7 @@ class Meteorite {
         this.ejeY = newAxisY;
         this.sprite.style.top = this.ejeY + "px";
         this.hitbox();  
-        let self = this
+        let self = this;
         this.enemyHitbox(self);
       } else {
         this.sprite.remove();  

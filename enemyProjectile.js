@@ -4,9 +4,9 @@ class EnemyProjectile {
         this.height = 10;
         this.speed = 10;
         this.shootingSpeed = 30;
-        this.ejeX = enemy.ejeX; // Empieza desde el enemigo
-        this.ejeY = enemy.ejeY + enemy.height / 2; // Centrado en la mitad del enemigo
-        this.directionX = -1; // Se mueve hacia la izquierda
+        this.ejeX = enemy.ejeX; 
+        this.ejeY = enemy.ejeY + enemy.height / 2; 
+        this.directionX = -1; 
         this.sprite = document.createElement("div");
         this.interval = setInterval(this.shooting.bind(this), 50);
     }
@@ -26,7 +26,7 @@ class EnemyProjectile {
         if (newAxisX > 0 && newAxisX < 1050) {
             this.ejeX = newAxisX;
             this.sprite.style.left = this.ejeX + "px";
-            let self = this
+            let self = this;
             this.hitbox(self)
         }
         if (this.ejeX <50) {
@@ -41,8 +41,11 @@ class EnemyProjectile {
             this.ejeY + this.height > playerCharacter.ejeY
         ) {
             this.remove();
+            console.log(playerCharacter.lifes)
             playerCharacter.lifes--;
+            checkLifes();
             playerCharacter.remove();
+          
         }
     }
 

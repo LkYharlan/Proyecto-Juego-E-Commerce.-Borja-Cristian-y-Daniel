@@ -9,7 +9,8 @@ class Enemy {
     this.directionY = 0;
     this.directionX = -1;
     this.sprite = document.createElement("div");
-    this.interval = setInterval(this.movement.bind(this), 45)
+    this.interval = setInterval(this.movement.bind(this), 45);
+    this.shootingInterval = setInterval(this.shootingCannon.bind(this), 2000); 
     this.engine = document.createElement("div");
     this.explotion = document.createElement("div");
   }
@@ -69,6 +70,13 @@ class Enemy {
     }
   }
 
+   // Función para que dispare el enemigo.
+   // Crea un nuevo proyectil desde la posición del enemigo.
+   shootingCannon() {
+    let enemyProjectile = new EnemyProjectile(this); 
+    enemyProjectile.insert();
+  }
+
   remove() {
     enemyExplotionSound.currentTime = 0
     enemyExplotionSound.play();
@@ -76,5 +84,6 @@ class Enemy {
     playField.removeChild(this.engine);
     this.explotion.style.display = "block";
     clearInterval(this.interval);
+    clearInterval(this.shootingInterval);
   }
 }
