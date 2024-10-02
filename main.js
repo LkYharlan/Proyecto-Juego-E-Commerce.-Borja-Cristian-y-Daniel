@@ -27,11 +27,18 @@ function startGame() {
   gameplaySong.play()
   gameplaySong.loop = true
   gameplaySong.volume = 0.3
-  
+
+  Player.score = 0
+  scoreDiv.innerText = `Score: ${Player.score}`
+
+
   playerCharacter.ejeX = 90;
   playerCharacter.ejeY = 265;
   playerCharacter.lifes = 3;
+  playerLifes.style.paddingRight = 270 + "px";
+  playerLifes.style.width = 30 + "px";
   playerCharacter.insert();
+  
   
   repeatEnemy = setInterval(function () {
     basicEnemy = new Enemy()

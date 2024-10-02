@@ -27,7 +27,7 @@ body {
     color: aqua;
     text-align: center;
     margin: 0;
-    font-size: 163px;
+    font-size: 180px;
     padding-top: 70px;
 }
 
@@ -38,7 +38,7 @@ body {
     left: 412px;
     top: 380px;
     background-image: url(/assets/interface_assets/botonStartUnpressed.png);
-  
+
 }
 
 #startButton:active {
@@ -72,8 +72,8 @@ body {
 
 #playField {
     position: relative;
-    background-image: url("/assets/interface_assets/skybox.png");
-    background-size: cover;
+    background-image: url("/assets/interface_assets/spaceSkyBox.jpg");
+    animation: movingBackground 40s infinite linear;
     width: 1024px;
     height: 600px;
     margin: 0 auto;
@@ -90,7 +90,7 @@ body {
     top: 560px
 }
 
-#lifes{
+#lifes {
     position: absolute;
     background-image: url("/assets/playerMini.png");
     background-repeat: repeat-x;
@@ -102,7 +102,7 @@ body {
 
 #score {
     position: absolute;
-    left:  520px;
+    left: 520px;
     height: 30px;
     width: 400px;
     font-size: 33px;
@@ -314,5 +314,15 @@ body {
 
     100% {
         background-image: url("/assets/enemy_Explosion/Ship3_Explosion_021.png");
+    }
+}
+
+@keyframes movingBackground {
+    0% {
+        background-position-x: 0px
+    }
+
+    100% {
+        background-position-x: -2400px
     }
 }

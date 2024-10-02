@@ -36,25 +36,29 @@ class Proyectile {
     if (this.ejeX >= 1024 - this.width) {
       this.remove();
     }
-    
+
   }
-  
-   hitbox(self) {
-     enemiesArray.forEach(function (enemy, index) {
-  
-    if (
-      enemy.ejeX < self.ejeX + self.width &&
-      enemy.ejeY < self.ejeY + self.height &&
-      enemy.ejeX + enemy.width > self.ejeX &&
-      enemy.ejeY + enemy.height > self.ejeY
-    ) {
-      enemiesArray.splice(index, 1)
-      enemy.remove();
-      Player.score += 10
-      scoreDiv.innerText = `Score: ${Player.score}`
-      self.remove()
-    }
-  })
+
+  hitbox(self) {
+    enemiesArray.forEach(function (enemy, index) {
+
+      if (
+        enemy.ejeX < self.ejeX + self.width &&
+        enemy.ejeY < self.ejeY + self.height &&
+        enemy.ejeX + enemy.width > self.ejeX &&
+        enemy.ejeY + enemy.height > self.ejeY
+      ) {
+        enemiesArray.splice(index, 1)
+        enemy.remove();
+        Player.score += 10
+        scoreDiv.innerText = `Score: ${Player.score}`
+        self.remove()
+        if (Player.score % 200 == 0 && playerCharacter.lifes <= 5) {
+          playerCharacter.lifes ++
+          checkLifes();
+        }
+      }
+    })
   }
 
   remove() {

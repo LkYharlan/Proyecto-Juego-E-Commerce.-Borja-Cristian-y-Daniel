@@ -45,6 +45,7 @@ class Meteorite {
       ) {
         this.remove();  
         playerCharacter.lifes--; 
+        checkLifes();
         enemyExplotionSound.currentTime = 0
         enemyExplotionSound.play(); 
         playerCharacter.remove();  
