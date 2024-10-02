@@ -14,8 +14,6 @@ let playerCharacter = new Player();
 
 scoreDiv.innerText = `Score: ${Player.score}`;
 
-
-
 let gameOverSong = new Audio("./assets/gameover_song.mp3");
 let gameplaySong = new Audio("./assets/gameplay_song.mp3");
 let proyectileSound = new Audio("./assets/laser_player.mp3");
@@ -32,7 +30,6 @@ function startGame() {
 
   Player.score = 0;
   scoreDiv.innerText = `Score: ${Player.score}`;
-
 
   playerCharacter.ejeX = 90;
   playerCharacter.ejeY = 265;
@@ -68,7 +65,7 @@ function startGame() {
 
 //Shooting function
 function shootingCannon() {
-  proyectile = new Proyectile();
+  proyectile = new Proyectile;
   proyectile.insert();
   proyectile.shooting();
   proyectileSound.currentTime = 0;
@@ -129,6 +126,7 @@ function checkLifes(){
   }
 }
 
+//Pantalla final
 
 function gameOver() {
   window.removeEventListener("keydown", controls);
@@ -141,6 +139,8 @@ function gameOver() {
   gameOverScreen.style.display = "block";
 }
 
+
+//Buttons
 
 let startScreen = document.getElementById("startScreen");
 let startButton = document.getElementById("startButton");
