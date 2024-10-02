@@ -1,5 +1,6 @@
 let playField = document.getElementById("playField");
 let scoreDiv = document.getElementById("score");
+let playerLifes = document.getElementById("lifes");
 
 let enemiesArray = []
 let proyectile
@@ -10,7 +11,6 @@ let movePrompt
 let moveClearInter
 let playerCharacter = new Player();
 
-console.log(playerCharacter.score)
 scoreDiv.innerText = `Score: ${Player.score}`;
 
 
@@ -97,6 +97,33 @@ function controls(event) {
   }
 }
 
+function checkLifes(){
+  if (playerCharacter.lives == 0) {
+    console.log(playerLifes);
+    playerLifes.style.paddingRight = 0 + "px";
+    playerLifes.style.width = 0 + "px";
+  }
+  if (playerCharacter.lives == 1) {
+    console.log(playerLifes);
+    playerLifes.style.paddingRight = 70 + "px";
+  }
+  if (playerCharacter.lives == 2) {
+    console.log(playerLifes);
+    playerLifes.style.paddingRight = 170 + "px";
+  }
+  if (playerCharacter.lives == 3) {
+    console.log(playerLifes);
+    playerLifes.style.paddingRight = 270 + "px";
+  }
+  if (playerCharacter.lives == 4) {
+    console.log(playerLifes);
+    playerLifes.style.paddingRight = 370 + "px";
+  }
+  if (playerCharacter.lives == 5) {
+    console.log(playerLifes);
+    playerLifes.style.paddingRight = 470 + "px";
+  }
+}
 
 //Game over function
 function gameOver() {

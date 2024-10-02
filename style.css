@@ -92,11 +92,12 @@ body {
 
 #lifes{
     position: absolute;
-    top: 4px;
-    left: 4px;
-    height: 30px;
-    width: 100px;
-    background-color: aqua;
+    background-image: url("/assets/playerMini.png");
+    background-repeat: repeat-x;
+    height: 35px;
+    width: 30px;
+    padding-right: 270px;
+    z-index: 1;
 }
 
 #score {

@@ -52,7 +52,6 @@ class Proyectile {
       enemy.remove();
       Player.score += 10
       scoreDiv.innerText = `Score: ${Player.score}`
-      console.log(playerCharacter.score)
       self.remove()
     }
   })
