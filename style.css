@@ -101,10 +101,11 @@ body {
 
 #score {
     position: absolute;
-    top: 4px;
-    left:  516px;
+    left:  520px;
     height: 30px;
-    width: 100px;
+    width: 400px;
+    font-size: 33px;
+    color: rgb(198, 195, 195);
 }
 
 #player {

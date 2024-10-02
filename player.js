@@ -1,4 +1,5 @@
 class Player {
+  static score = 0;
   constructor() {
     this.width = 40;
     this.height = 40;
@@ -7,7 +8,6 @@ class Player {
     this.ejeY = 265;
     this.directionX = 0;
     this.directionY = 0;
-    this.score = 0;
     this.lives = 3;
     this.sprite = document.createElement("div");
     this.engine = document.createElement("div");

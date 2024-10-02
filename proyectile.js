@@ -50,8 +50,9 @@ class Proyectile {
     ) {
       enemiesArray.splice(index, 1)
       enemy.remove();
-      playerCharacter.score ++
-      //console.log(playerCharacter.score)
+      Player.score += 10
+      scoreDiv.innerText = `Score: ${Player.score}`
+      console.log(playerCharacter.score)
       self.remove()
     }
   })

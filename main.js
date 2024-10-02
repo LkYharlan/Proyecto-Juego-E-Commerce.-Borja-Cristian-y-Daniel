@@ -10,10 +10,8 @@ let movePrompt
 let moveClearInter
 let playerCharacter = new Player();
 
-playerCharacter.score 
-
-
-scoreDiv.innerText = playerCharacter.score;
+console.log(playerCharacter.score)
+scoreDiv.innerText = `Score: ${Player.score}`;
 
 
 let gameOverSong = new Audio("./assets/gameover_song.mp3")
@@ -61,7 +59,6 @@ function startGame() {
 
 //Shooting function
 function shootingCannon() {
-  console.log(Proyectile.bulletCounter)
   proyectile = new Proyectile();
   proyectile.insert();
   proyectile.shooting();
