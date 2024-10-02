@@ -25,7 +25,7 @@ function startGame() {
 
   playerCharacter.ejeX = 90;
   playerCharacter.ejeY = 265;
-  playerCharacter.lives = 3;     
+  playerCharacter.lives = 3;
   playerCharacter.insert();
 
   repeatEnemy = setInterval(function () {
@@ -79,36 +79,38 @@ function controls(event) {
       playerCharacter.movement();
       break;
     case " ":
-      shootingCannon();
-      proyectile.shootingSpeed = 30;   
-      break;
+      if (playerCharacter.lives > 0) {
+        shootingCannon();
+        proyectile.shootingSpeed = 30;
+        break;
+      }
   }
 }
 
-function gameOver() {
-  window.removeEventListener("keydown", controls);
-  
-  enemiesArray = [];
-  
-  playField.style.display = "none";
-  gameOverScreen.style.display = "block";
-}
+  function gameOver() {
+    window.removeEventListener("keydown", controls);
 
-//GameOverScreen
-let startScreen = document.getElementById("startScreen");
-let startButton = document.getElementById("startButton");
+    enemiesArray = [];
 
-startButton.addEventListener("click", function () {
-  startGame();
-  playField.style.display = "block";
-  startScreen.style.display = "none";
-});
+    playField.style.display = "none";
+    gameOverScreen.style.display = "block";
+  }
 
-let gameOverScreen = document.getElementById("gameOverScreen");
-let gameOverButton = document.getElementById("gameOverButton");
+  //GameOverScreen
+  let startScreen = document.getElementById("startScreen");
+  let startButton = document.getElementById("startButton");
 
-gameOverButton.addEventListener("click", function () {
-  startScreen.style.display = "block";
-  gameOverScreen.style.display = "none";
-});
+  startButton.addEventListener("click", function () {
+    startGame();
+    playField.style.display = "block";
+    startScreen.style.display = "none";
+  });
+
+  let gameOverScreen = document.getElementById("gameOverScreen");
+  let gameOverButton = document.getElementById("gameOverButton");
+
+  gameOverButton.addEventListener("click", function () {
+    startScreen.style.display = "block";
+    gameOverScreen.style.display = "none";
+  });
 

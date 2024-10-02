@@ -37,6 +37,7 @@ body {
     left: 412px;
     top: 380px;
     background-color: aqua;
+    border: none;
 }
 
 #startButton:hover{
@@ -50,6 +51,7 @@ body {
     height: 50px;
     left: 412px;
     top: 380px;
+    border: none;
 }
 
 #gameOverButton:hover{
