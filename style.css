@@ -7,7 +7,8 @@ body {
 
 #startScreen {
     position: relative;
-    background-color: rgb(9, 9, 34);
+    background-image: url("/assets/interface_assets/start_screen.png");
+    background-size: cover;
     width: 1024px;
     height: 600px;
     margin: 0 auto;
@@ -36,31 +37,31 @@ body {
     height: 50px;
     left: 412px;
     top: 380px;
-    background-color: aqua;
-    border: none;
+    background-image: url(/assets/interface_assets/botonStartUnpressed.png);
+  
 }
 
-#startButton:hover {
-    background-color: rgb(227, 243, 83);
+#startButton:active {
+    background-image: url(/assets/interface_assets/botonStartPressed.png);
 }
 
 #gameOverButton {
-    background-color: aqua;
+    background-image: url("assets/interface_assets/botonRestartUnpressed.png");
     position: absolute;
     width: 200px;
     height: 50px;
     left: 412px;
     top: 380px;
-    border: none;
 }
 
-#gameOverButton:hover {
-    background-color: rgb(227, 243, 83);
+#gameOverButton:active {
+    background-image: url('assets/interface_assets/botonRestartPressed.png');
 }
 
 #gameOverScreen {
     position: relative;
-    background-color: rgb(9, 9, 34);
+    background-image: url("/assets/interface_assets/gameOver.jpg");
+    background-size: cover;
     width: 1024px;
     height: 600px;
     margin: 0 auto;
@@ -71,7 +72,8 @@ body {
 
 #playField {
     position: relative;
-    background-color: rgb(9, 9, 34);
+    background-image: url("/assets/interface_assets/skybox.png");
+    background-size: cover;
     width: 1024px;
     height: 600px;
     margin: 0 auto;
@@ -79,12 +81,30 @@ body {
     display: none;
 }
 
-.score {
+#statusBar {
     position: absolute;
     width: 1024px;
     height: 40px;
-    background-color: aquamarine;
+    background-image: url("/assets/interface_assets/score_bar.jpg");
+    background-size: cover;
     top: 560px
+}
+
+#lifes{
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    height: 30px;
+    width: 100px;
+    background-color: aqua;
+}
+
+#score {
+    position: absolute;
+    top: 4px;
+    left:  516px;
+    height: 30px;
+    width: 100px;
 }
 
 #player {
@@ -134,7 +154,6 @@ body {
     display: none;
 }
 
-
 .meteorite {
     padding: 20px;
     background-image: url("/assets/meteorite.png");
@@ -149,8 +168,6 @@ body {
     animation-name: shot;
     animation-duration: 1.5s;
 }
-
-
 
 .enemyProjectile {
     background-color: yellow;

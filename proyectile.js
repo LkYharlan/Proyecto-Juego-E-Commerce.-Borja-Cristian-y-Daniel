@@ -1,4 +1,5 @@
 class Proyectile {
+  static bulletCounter = 0;
   constructor() {
     this.width = 10;
     this.height = 10;
@@ -21,6 +22,7 @@ class Proyectile {
     this.sprite.style.left = this.ejeX + "px";
     this.sprite.style.position = "absolute";
     playField.appendChild(this.sprite);
+    Proyectile.bulletCounter++
   }
 
   shooting() {
@@ -32,11 +34,11 @@ class Proyectile {
       this.hitbox(self)
     }
     if (this.ejeX >= 1024 - this.width) {
-      this.sprite.remove();
+      this.remove();
     }
     
   }
-
+  
    hitbox(self) {
      enemiesArray.forEach(function (enemy, index) {
   
@@ -49,13 +51,14 @@ class Proyectile {
       enemiesArray.splice(index, 1)
       enemy.remove();
       playerCharacter.score ++
-      console.log(playerCharacter.score)
+      //console.log(playerCharacter.score)
       self.remove()
     }
   })
   }
 
   remove() {
+    Proyectile.bulletCounter -= 1
     playField.removeChild(this.sprite);
     clearInterval(this.interval);
   }
