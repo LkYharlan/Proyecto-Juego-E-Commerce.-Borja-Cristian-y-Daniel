@@ -30,7 +30,7 @@ function startGame() {
   
   playerCharacter.ejeX = 90;
   playerCharacter.ejeY = 265;
-  playerCharacter.lives = 3;
+  playerCharacter.lifes = 3;
   playerCharacter.insert();
   
   repeatEnemy = setInterval(function () {
@@ -69,7 +69,7 @@ function shootingCannon() {
 
 //Controls
 function controls(event) {
-  if (playerCharacter.lives > 0) {
+  if (playerCharacter.lifes > 0) {
     switch (event.key.toLowerCase()) {
       case "w":
         playerCharacter.directionY = -1;
@@ -97,29 +97,30 @@ function controls(event) {
   }
 }
 
+//Checking lifes of player
 function checkLifes(){
-  if (playerCharacter.lives == 0) {
+  if (playerCharacter.lifes == 0) {
     console.log(playerLifes);
     playerLifes.style.paddingRight = 0 + "px";
     playerLifes.style.width = 0 + "px";
   }
-  if (playerCharacter.lives == 1) {
+  if (playerCharacter.lifes == 1) {
     console.log(playerLifes);
     playerLifes.style.paddingRight = 70 + "px";
   }
-  if (playerCharacter.lives == 2) {
+  if (playerCharacter.lifes == 2) {
     console.log(playerLifes);
     playerLifes.style.paddingRight = 170 + "px";
   }
-  if (playerCharacter.lives == 3) {
+  if (playerCharacter.lifes == 3) {
     console.log(playerLifes);
     playerLifes.style.paddingRight = 270 + "px";
   }
-  if (playerCharacter.lives == 4) {
+  if (playerCharacter.lifes == 4) {
     console.log(playerLifes);
     playerLifes.style.paddingRight = 370 + "px";
   }
-  if (playerCharacter.lives == 5) {
+  if (playerCharacter.lifes == 5) {
     console.log(playerLifes);
     playerLifes.style.paddingRight = 470 + "px";
   }

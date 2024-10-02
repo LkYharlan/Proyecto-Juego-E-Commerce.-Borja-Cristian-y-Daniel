@@ -8,7 +8,7 @@ class Player {
     this.ejeY = 265;
     this.directionX = 0;
     this.directionY = 0;
-    this.lives = 3;
+    this.lifes = 3;
     this.sprite = document.createElement("div");
     this.engine = document.createElement("div");
     this.explotion = document.createElement("div")
@@ -61,7 +61,7 @@ class Player {
   }
 
   remove() {
-    if (this.lives == 0) {
+    if (this.lifes == 0) {
       playerExplotionSound.play();
       gameplaySong.pause();
       gameplaySong.currentTime = 0;

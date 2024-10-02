@@ -44,7 +44,7 @@ class Meteorite {
           this.ejeY + this.height > playerCharacter.ejeY
       ) {
         this.remove();  
-        playerCharacter.lives--; 
+        playerCharacter.lifes--; 
         enemyExplotionSound.currentTime = 0
         enemyExplotionSound.play(); 
         playerCharacter.remove();  

@@ -41,7 +41,7 @@ class EnemyProjectile {
             this.ejeY + this.height > playerCharacter.ejeY
         ) {
             this.remove();
-            playerCharacter.lives--;
+            playerCharacter.lifes--;
             playerCharacter.remove();
         }
     }
