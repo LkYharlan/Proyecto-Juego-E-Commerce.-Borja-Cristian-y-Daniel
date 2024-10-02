@@ -34,6 +34,7 @@ function startGame() {
     enemiesArray.push(basicEnemy)
   }, 1000)
 
+
   repeatMeteorite = setInterval(function () {
     let meteorite = new Meteorite();
     meteorite.insert();

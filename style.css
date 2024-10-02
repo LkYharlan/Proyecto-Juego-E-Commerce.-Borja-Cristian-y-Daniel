@@ -92,7 +92,15 @@ body {
     background-image: url("/assets/player.png");
     background-repeat: no-repeat;
     background-size: 80px;
+    
+}
 
+#playerEngine {
+    padding: 20px;
+    background-repeat: no-repeat;
+    animation-name: playerEngine;
+    animation-iteration-count: infinite;
+    animation-duration: 0.2s;
 }
 
 .basicEnemy {
@@ -119,11 +127,37 @@ body {
 
 
 
+.enemyProjectile {
+    background-color: yellow;
+    width: 10px;
+    height: 10px;
+}
+
+
+
 @keyframes shot {
     0% {
         background-image: url("/assets/player_shot/shot4_2.png");
     }
     100% {
         background-image: url("/assets/player_shot/shot4_3.png");
+    }
+}
+
+@keyframes playerEngine{
+    0%{
+        background-image: url("/assets/player_flight/Ship4_normal_fligjt_001.png");
+    }
+
+    25%{
+        background-image: url("/assets/player_flight/Ship4_normal_fligjt_003.png");
+    }
+
+    75%{
+        background-image: url("/assets/player_flight/Ship4_normal_fligjt_004.png");
+    }
+
+    100%{
+        background-image: url("/assets/player_flight/Ship4_normal_fligjt_006.png");
     }
 }

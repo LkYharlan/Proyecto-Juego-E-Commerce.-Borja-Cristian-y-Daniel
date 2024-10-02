@@ -2,7 +2,7 @@ class Meteorite {
     constructor() {
       this.width = 40;
       this.height = 40;
-      this.speed = 6;
+      this.speed = 12;
       let randomSpot = Math.floor(Math.random() * 960);  
       this.ejeX = randomSpot;
       this.ejeY = 0;  
