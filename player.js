@@ -42,14 +42,12 @@ class Player {
       this.engine.style.top = this.ejeY + 25 + "px";
     }
 
-    if (newAxisX >= 0 && newAxisX <= 512 - this.width) {
+    if (newAxisX >= 15 && newAxisX <= 512 - this.width) {
       this.ejeX = newAxisX;
       this.sprite.style.left = this.ejeX + "px";
       this.engine.style.left = this.ejeX - 15 + "px";
     }
   }
-
-  
 
   remove() {
     if (this.lives == 0) {

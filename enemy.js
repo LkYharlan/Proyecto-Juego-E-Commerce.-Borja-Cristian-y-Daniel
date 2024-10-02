@@ -10,6 +10,7 @@ class Enemy {
     this.directionX = -1;
     this.sprite = document.createElement("div");
     this.interval = setInterval(this.movement.bind(this), 45)
+    this.engine = document.createElement("div");
   }
 
   insert() {
@@ -20,6 +21,14 @@ class Enemy {
     this.sprite.style.left = this.ejeX + "px";
     this.sprite.style.position = "absolute";
     playField.appendChild(this.sprite);
+
+    this.engine.setAttribute("class", "enemyEngine");
+    this.engine.style.width = 10 + "px";
+    this.engine.style.height = 10 + "px";
+    this.engine.style.top = this.ejeY + 23 + "px";
+    this.engine.style.left = this.ejeX + 40 + "px";
+    this.engine.style.position = "absolute";
+    playField.appendChild(this.engine);
   }
 
   movement() {
@@ -27,9 +36,11 @@ class Enemy {
     if (newAxisX >= -1 && newAxisX < 1024 - this.width) {
       this.ejeX = newAxisX;
       this.sprite.style.left = this.ejeX + "px";
+      this.engine.style.left = this.ejeX + 60 + "px";
       this.hitbox();
       if (this.ejeX <= 0) {
         this.sprite.remove();
+        this.engine.remove();
       }
     }
   }
@@ -50,6 +61,7 @@ class Enemy {
     enemyExplotionSound.currentTime = 0
     enemyExplotionSound.play();
     playField.removeChild(this.sprite);
+    playField.removeChild(this.engine);
     clearInterval(this.interval);
   }
 }

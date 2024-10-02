@@ -110,6 +110,14 @@ body {
     background-size: 80px;
 }
 
+.enemyEngine{
+    padding: 20px;
+    background-repeat: no-repeat;
+    animation-name: enemyEngine;
+    animation-iteration-count: infinite;
+    animation-duration: 0.2s;
+}
+
 .meteorite {
     padding: 20px;
     background-image: url("/assets/meteorite.png");
@@ -159,5 +167,20 @@ body {
 
     100%{
         background-image: url("/assets/player_flight/Ship4_normal_fligjt_006.png");
+    }
+}
+
+@keyframes enemyEngine{
+    0%{
+        background-image: url("/assets/enemy_flight/Ship3_normal_flight_001.png");
+    }
+    25%{
+        background-image: url("/assets/enemy_flight/Ship3_normal_flight_003.png");
+    }
+    75%{
+        background-image: url("/assets/enemy_flight/Ship3_normal_flight_005.png");
+    }
+    100%{
+        background-image: url("/assets/enemy_flight/Ship3_normal_flight_007.png");
     }
 }
