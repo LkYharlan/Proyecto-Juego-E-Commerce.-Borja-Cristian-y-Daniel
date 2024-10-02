@@ -18,7 +18,7 @@ let enemyExplotionSound = new Audio("./assets/enemy_explotion.mp3")
 function startGame() {
   gameOverSong.pause()
   gameOverSong.currentTime = 0
-
+  playerCharacter.explotion.style.display = "none";
   gameplaySong.play()
   gameplaySong.loop = true
   gameplaySong.volume = 0.3
@@ -38,7 +38,6 @@ function startGame() {
   repeatMeteorite = setInterval(function () {
     let meteorite = new Meteorite();
     meteorite.insert();
-
   }, 6000)
 
   movePrompt = window.addEventListener("keydown", controls);
@@ -53,6 +52,7 @@ function startGame() {
   }, 30);
 }
 
+//Shooting function
 function shootingCannon() {
   proyectile = new Proyectile();
   proyectile.insert();
@@ -61,57 +61,60 @@ function shootingCannon() {
   proyectileSound.play();
 }
 
+//Controls
 function controls(event) {
-  switch (event.key.toLowerCase()) {
-    case "w":
-      playerCharacter.directionY = -1;
-      playerCharacter.movement();
-      break;
-    case "s":
-      playerCharacter.directionY = 1;
-      playerCharacter.movement();
-      break;
-    case "a":
-      playerCharacter.directionX = -1;
-      playerCharacter.movement();
-      break;
-    case "d":
-      playerCharacter.directionX = 1;
-      playerCharacter.movement();
-      break;
-    case " ":
-      if (playerCharacter.lives > 0) {
+  if (playerCharacter.lives > 0) {
+    switch (event.key.toLowerCase()) {
+      case "w":
+        playerCharacter.directionY = -1;
+        playerCharacter.movement();
+        break;
+      case "s":
+        playerCharacter.directionY = 1;
+        playerCharacter.movement();
+        break;
+      case "a":
+        playerCharacter.directionX = -1;
+        playerCharacter.movement();
+        break;
+      case "d":
+        playerCharacter.directionX = 1;
+        playerCharacter.movement();
+        break;
+      case " ":
         shootingCannon();
         proyectile.shootingSpeed = 30;
         break;
-      }
+    }
   }
 }
-
-  function gameOver() {
-    window.removeEventListener("keydown", controls);
-
-    enemiesArray = [];
-
-    playField.style.display = "none";
-    gameOverScreen.style.display = "block";
+//Game over function
+function gameOver() {
+  window.removeEventListener("keydown", controls);
+  let explotionAnimation = document.querySelectorAll(".enemyExplotion");
+  for (let i = 0; i < explotionAnimation.length; i++) {
+    playField.removeChild(explotionAnimation[i])
   }
+  enemiesArray = [];
+  playField.style.display = "none";
+  gameOverScreen.style.display = "block";
+}
 
-  //GameOverScreen
-  let startScreen = document.getElementById("startScreen");
-  let startButton = document.getElementById("startButton");
+//Game over screen
+let startScreen = document.getElementById("startScreen");
+let startButton = document.getElementById("startButton");
 
-  startButton.addEventListener("click", function () {
-    startGame();
-    playField.style.display = "block";
-    startScreen.style.display = "none";
-  });
+startButton.addEventListener("click", function () {
+  startGame();
+  playField.style.display = "block";
+  startScreen.style.display = "none";
+});
 
-  let gameOverScreen = document.getElementById("gameOverScreen");
-  let gameOverButton = document.getElementById("gameOverButton");
+let gameOverScreen = document.getElementById("gameOverScreen");
+let gameOverButton = document.getElementById("gameOverButton");
 
-  gameOverButton.addEventListener("click", function () {
-    startScreen.style.display = "block";
-    gameOverScreen.style.display = "none";
-  });
+gameOverButton.addEventListener("click", function () {
+  startScreen.style.display = "block";
+  gameOverScreen.style.display = "none";
+});
 

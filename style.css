@@ -40,7 +40,7 @@ body {
     border: none;
 }
 
-#startButton:hover{
+#startButton:hover {
     background-color: rgb(227, 243, 83);
 }
 
@@ -54,7 +54,7 @@ body {
     border: none;
 }
 
-#gameOverButton:hover{
+#gameOverButton:hover {
     background-color: rgb(227, 243, 83);
 }
 
@@ -92,7 +92,6 @@ body {
     background-image: url("/assets/player.png");
     background-repeat: no-repeat;
     background-size: 80px;
-    
 }
 
 #playerEngine {
@@ -103,6 +102,15 @@ body {
     animation-duration: 0.2s;
 }
 
+#playerExplotion {
+    padding: 20px;
+    background-size: cover;
+    animation-name: playerExplotion;
+    animation-duration: 3s;
+    display: none;
+}
+
+
 .basicEnemy {
     padding: 20px;
     background-image: url("/assets/Enemy1.1.png");
@@ -110,13 +118,22 @@ body {
     background-size: 80px;
 }
 
-.enemyEngine{
+.enemyEngine {
     padding: 20px;
     background-repeat: no-repeat;
     animation-name: enemyEngine;
     animation-iteration-count: infinite;
     animation-duration: 0.2s;
 }
+
+.enemyExplotion {
+    padding: 20px;
+    background-size: cover;
+    animation-name: enemyExplotion;
+    animation-duration: 0.5s;
+    display: none;
+}
+
 
 .meteorite {
     padding: 20px;
@@ -147,40 +164,136 @@ body {
     0% {
         background-image: url("/assets/player_shot/shot4_2.png");
     }
+
     100% {
         background-image: url("/assets/player_shot/shot4_3.png");
     }
 }
 
-@keyframes playerEngine{
-    0%{
-        background-image: url("/assets/player_flight/Ship4_normal_fligjt_001.png");
+@keyframes playerEngine {
+    0% {
+        background-image: url("/assets/player_flight/Ship4_normal_flight_001.png");
     }
 
-    25%{
-        background-image: url("/assets/player_flight/Ship4_normal_fligjt_003.png");
+    25% {
+        background-image: url("/assets/player_flight/Ship4_normal_flight_003.png");
     }
 
-    75%{
-        background-image: url("/assets/player_flight/Ship4_normal_fligjt_004.png");
+    75% {
+        background-image: url("/assets/player_flight/Ship4_normal_flight_004.png");
     }
 
-    100%{
-        background-image: url("/assets/player_flight/Ship4_normal_fligjt_006.png");
+    100% {
+        background-image: url("/assets/player_flight/Ship4_normal_flight_006.png");
     }
 }
 
-@keyframes enemyEngine{
-    0%{
+@keyframes playerExplotion {
+    0% {
+        background-image: url("/assets/player_Explosion/Ship4_Explosion_000.png");
+    }
+
+    10% {
+        background-image: url("/assets/player_Explosion/Ship4_Explosion_003.png");
+    }
+
+    20% {
+        background-image: url("/assets/player_Explosion/Ship4_Explosion_005.png");
+    }
+
+    30% {
+        background-image: url("/assets/player_Explosion/Ship4_Explosion_007.png");
+    }
+
+    40% {
+        background-image: url("/assets/player_Explosion/Ship4_Explosion_008.png");
+    }
+
+    50% {
+        background-image: url("/assets/player_Explosion/Ship4_Explosion_012.png");
+    }
+
+    60% {
+        background-image: url("/assets/player_Explosion/Ship4_Explosion_013.png");
+    }
+
+    70% {
+        background-image: url("/assets/player_Explosion/Ship4_Explosion_015.png");
+    }
+
+    80% {
+        background-image: url("/assets/player_Explosion/Ship4_Explosion_018.png");
+    }
+
+    90% {
+        background-image: url("/assets/player_Explosion/Ship4_Explosion_019.png");
+    }
+
+    100% {
+        background-image: url("/assets/player_Explosion/Ship4_Explosion_020.png");
+    }
+}
+
+@keyframes enemyEngine {
+    0% {
         background-image: url("/assets/enemy_flight/Ship3_normal_flight_001.png");
     }
-    25%{
+
+    25% {
         background-image: url("/assets/enemy_flight/Ship3_normal_flight_003.png");
     }
-    75%{
+
+    75% {
         background-image: url("/assets/enemy_flight/Ship3_normal_flight_005.png");
     }
-    100%{
+
+    100% {
         background-image: url("/assets/enemy_flight/Ship3_normal_flight_007.png");
+    }
+}
+
+@keyframes enemyExplotion {
+    0% {
+        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_000.png");
+    }
+
+    10% {
+        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_004.png");
+    }
+
+    20% {
+        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_005.png");
+    }
+
+    30% {
+        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_007.png");
+    }
+
+    30% {
+        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_009.png");
+    }
+
+    50% {
+        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_012.png");
+    }
+
+    60% {
+        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_013.png");
+    }
+
+    70% {
+        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_015.png");
+    }
+
+    80% {
+        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_018.png");
+    }
+
+    90% {
+        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_019.png");
+    }
+
+    100% {
+        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_021.png");
     }
 }

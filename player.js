@@ -11,6 +11,7 @@ class Player {
     this.lives = 3;
     this.sprite = document.createElement("div");
     this.engine = document.createElement("div");
+    this.explotion = document.createElement("div")
   }
 
   insert() {
@@ -18,7 +19,7 @@ class Player {
     this.sprite.style.width = this.width + "px";
     this.sprite.style.height = this.height + "px";
     this.sprite.style.top = this.ejeY + "px";
-    this.sprite.style.left = this.ejeX - 40 + "px";
+    this.sprite.style.left = this.ejeX + "px";
     this.sprite.style.position = "absolute";
     playField.appendChild(this.sprite);
 
@@ -30,6 +31,14 @@ class Player {
     this.engine.style.position = "absolute";
     playField.appendChild(this.engine);
 
+    this.explotion.setAttribute("id", "playerExplotion");
+    this.explotion.style.width = this.width + "px";
+    this.explotion.style.height = this.height + "px";
+    this.explotion.style.top = this.ejeY + "px";
+    this.explotion.style.left = this.ejeX + "px";
+    this.explotion.style.position = "absolute";
+    playField.appendChild(this.explotion);
+
   }
 
   movement() {
@@ -40,12 +49,14 @@ class Player {
       this.ejeY = newAxisY;
       this.sprite.style.top = this.ejeY + "px";
       this.engine.style.top = this.ejeY + 25 + "px";
+      this.explotion.style.top = this.ejeY + "px";
     }
 
     if (newAxisX >= 15 && newAxisX <= 512 - this.width) {
       this.ejeX = newAxisX;
       this.sprite.style.left = this.ejeX + "px";
       this.engine.style.left = this.ejeX - 15 + "px";
+      this.explotion.style.left = this.ejeX + "px";
     }
   }
 
@@ -59,6 +70,7 @@ class Player {
 
       playField.removeChild(this.sprite);
       playField.removeChild(this.engine);
+      this.explotion.style.display = "block"
       clearInterval(repeatEnemy);
       clearInterval(movePlayerInterval);
       clearInterval(repeatMeteorite);
