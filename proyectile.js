@@ -22,7 +22,7 @@ class Proyectile {
     this.sprite.style.left = this.ejeX + "px";
     this.sprite.style.position = "absolute";
     playField.appendChild(this.sprite);
-    Proyectile.bulletCounter++
+    Proyectile.bulletCounter++;
   }
 
   shooting() {
@@ -30,41 +30,38 @@ class Proyectile {
     if (newAxisX > 0 && newAxisX <= 1050 - this.width) {
       this.ejeX = newAxisX;
       this.sprite.style.left = this.ejeX + "px";
-      let self = this
-      this.hitbox(self)
+      let self = this;
+      this.hitbox(self);
     }
     if (this.ejeX >= 1024 - this.width) {
       this.remove();
     }
-
   }
 
   hitbox(self) {
     enemiesArray.forEach(function (enemy, index) {
-
       if (
         enemy.ejeX < self.ejeX + self.width &&
         enemy.ejeY < self.ejeY + self.height &&
         enemy.ejeX + enemy.width > self.ejeX &&
         enemy.ejeY + enemy.height > self.ejeY
       ) {
-        enemiesArray.splice(index, 1)
+        enemiesArray.splice(index, 1);
         enemy.remove();
-        Player.score += 10
-        scoreDiv.innerText = `Score: ${Player.score}`
-        self.remove()
-        if (Player.score % 200 == 0 && playerCharacter.lifes <= 5) {
-          playerCharacter.lifes ++
+        Player.score += 10;
+        scoreDiv.innerText = `Score: ${Player.score}`;
+        self.remove();
+        if (Player.score % 200 == 0 && playerCharacter.lifes < 5) {
+          playerCharacter.lifes++;
           checkLifes();
         }
       }
-    })
+    });
   }
 
   remove() {
-    Proyectile.bulletCounter -= 1
+    Proyectile.bulletCounter -= 1;
     playField.removeChild(this.sprite);
     clearInterval(this.interval);
   }
 }
-

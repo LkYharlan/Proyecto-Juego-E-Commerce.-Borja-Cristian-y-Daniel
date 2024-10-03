@@ -1,4 +1,7 @@
 body {
+    background-image: url(/assets/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: "VT323", monospace;
     font-weight: 400;
     font-style: normal;
@@ -7,6 +10,7 @@ body {
 
 #startScreen {
     position: relative;
+    border: 5px solid rgb(22, 151, 35);
     background-image: url("/assets/interface_assets/start_screen.png");
     background-size: cover;
     width: 1024px;
@@ -17,6 +21,7 @@ body {
 
 #startGameText {
     color: rgb(98, 170, 144);
+    text-shadow: 0px 0px 15px rgb(70, 123, 104);
     font-size: 160px;
     text-align: center;
     margin: 0;
@@ -24,6 +29,7 @@ body {
 
 #startGameText2 {
     color: rgb(255, 215, 0);
+    text-shadow: 0px 0px 15px rgb(201, 171, 0);
     font-size: 80px;
     text-align: center;
     margin: 0;
@@ -31,6 +37,7 @@ body {
 
 #gameOverText {
     color: aqua;
+    text-shadow: 0px 0px 15px rgb(139, 200, 230);
     text-align: center;
     margin: 0;
     font-size: 200px;
@@ -44,7 +51,6 @@ body {
     left: 412px;
     top: 380px;
     background-image: url(/assets/interface_assets/botonStartUnpressed.png);
-
 }
 
 #startButton:active {
@@ -66,6 +72,7 @@ body {
 
 #gameOverScreen {
     position: relative;
+    border: 5px solid rgb(22, 151, 35);
     background-image: url("/assets/interface_assets/gameOver.jpg");
     background-size: cover;
     width: 1024px;
@@ -78,6 +85,7 @@ body {
 
 #playField {
     position: relative;
+    border: 6px solid rgb(22, 151, 35);
     background-image: url("/assets/interface_assets/spaceSkyBox.jpg");
     animation: movingBackground 40s infinite linear;
     width: 1024px;

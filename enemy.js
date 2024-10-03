@@ -9,7 +9,7 @@ class Enemy {
     this.directionY = 0;
     this.directionX = -1;
     this.sprite = document.createElement("div");
-    this.interval = setInterval(this.movement.bind(this), 45)
+    this.interval = setInterval(this.movement.bind(this), 45);
     this.engine = document.createElement("div");
     this.explotion = document.createElement("div");
   }
@@ -64,13 +64,13 @@ class Enemy {
       this.remove();
       this.explotion.style.display = "block";
       playerCharacter.lifes--;
-      checkLifes()
+      checkLifes();
       playerCharacter.remove();
     }
   }
 
   remove() {
-    enemyExplotionSound.currentTime = 0
+    enemyExplotionSound.currentTime = 0;
     enemyExplotionSound.play();
     playField.removeChild(this.sprite);
     playField.removeChild(this.engine);

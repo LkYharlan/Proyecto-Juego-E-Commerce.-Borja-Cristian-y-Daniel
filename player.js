@@ -11,7 +11,7 @@ class Player {
     this.lifes = 3;
     this.sprite = document.createElement("div");
     this.engine = document.createElement("div");
-    this.explotion = document.createElement("div")
+    this.explotion = document.createElement("div");
   }
 
   insert() {
@@ -38,12 +38,11 @@ class Player {
     this.explotion.style.left = this.ejeX + "px";
     this.explotion.style.position = "absolute";
     playField.appendChild(this.explotion);
-
   }
 
   movement() {
     let newAxisY = this.ejeY + this.speed * this.directionY;
-    let newAxisX = this.ejeX + this.speed * this.directionX
+    let newAxisX = this.ejeX + this.speed * this.directionX;
 
     if (newAxisY >= 0 && newAxisY <= 540 - this.height) {
       this.ejeY = newAxisY;
@@ -65,13 +64,14 @@ class Player {
       playerExplotionSound.play();
       gameplaySong.pause();
       gameplaySong.currentTime = 0;
-      gameOverSong.volume = 0.4
-      gameOverSong.play()
+      gameOverSong.volume = 0.4;
+      gameOverSong.play();
 
       playField.removeChild(this.sprite);
       playField.removeChild(this.engine);
-      this.explotion.style.display = "block"
-      finalScoreDiv.innerText = `Final Score: ${Player.score}`
+      this.explotion.style.display = "block";
+      finalScoreDiv.innerText = `Final Score: ${Player.score}`;
+
       clearInterval(repeatEnemy);
       clearInterval(movePlayerInterval);
       clearInterval(repeatMeteorite);
