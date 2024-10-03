@@ -35,6 +35,7 @@ function startGame() {
 
   //Set stats to default
   Player.score = 0;
+  Enemy.speed = 12;
   scoreDiv.innerText = `Score: ${Player.score}`;
 
   playerCharacter.ejeX = 90;
