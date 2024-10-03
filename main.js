@@ -1,3 +1,4 @@
+//Necesary global variables
 let playField = document.getElementById("playField");
 let scoreDiv = document.getElementById("score");
 let finalScoreDiv = document.getElementById("finalScore");
@@ -15,12 +16,15 @@ let playerCharacter = new Player();
 
 scoreDiv.innerText = `Score: ${Player.score}`;
 
+//Audio files
 let gameOverSong = new Audio("./assets/gameover_song.mp3");
 let gameplaySong = new Audio("./assets/gameplay_song.mp3");
 let proyectileSound = new Audio("./assets/laser_player.mp3");
 let playerExplotionSound = new Audio("./assets/player_explotion.mp3");
 let enemyExplotionSound = new Audio("./assets/enemy_explotion.mp3");
 
+
+//Start game function
 function startGame() {
   gameOverSong.pause();
   gameOverSong.currentTime = 0;
@@ -29,7 +33,10 @@ function startGame() {
   gameplaySong.loop = true;
   gameplaySong.volume = 0.3;
 
+
+  //Set stats to default
   Player.score = 0;
+  Enemy.speed = 12;
   scoreDiv.innerText = `Score: ${Player.score}`;
 
   playerCharacter.ejeX = 90;
@@ -38,27 +45,28 @@ function startGame() {
   playerLifes.style.paddingRight = 270 + "px";
   playerLifes.style.width = 30 + "px";
   playerCharacter.insert();
-  
-  
+
+  //Enemy and meteorite spawn
   repeatEnemy = setInterval(function () {
     basicEnemy = new Enemy();
     basicEnemy.insert();
     enemiesArray.push(basicEnemy);
   }, 1000);
-  
-  
+
+
   repeatMeteorite = setInterval(function () {
-    let meteorite = new Meteorite;
+    let meteorite = new Meteorite();
     meteorite.insert();
   }, 6000);
-  
+
+  //Keybind listeners
   movePrompt = window.addEventListener("keydown", controls);
-  
-  moveClearInter = window.addEventListener("keyup", function (event) {
+
+  moveClearInter = window.addEventListener("keyup", function () {
     playerCharacter.directionY = 0;
     playerCharacter.directionX = 0;
-  });
-  
+  })
+
   movePlayerInterval = setInterval(function () {
     playerCharacter.movement();
   }, 30);
@@ -66,24 +74,14 @@ function startGame() {
 
 //Shooting function
 function shootingCannon() {
-  proyectile = new Proyectile;
+  proyectile = new Proyectile();
   proyectile.insert();
   proyectile.shooting();
   proyectileSound.currentTime = 0;
   proyectileSound.play();
-  
 }
 
-//limpia array de Proyectiles Enemigos
-function clearArrayBulletEnemies (){
-  arrEnemyProjectile = document.querySelectorAll(".enemyProjectile");
-  for (let i = 0; i < arrEnemyProjectile.length; i++) {
-    playField.removeChild(arrEnemyProjectile[i]);
-  }
-}
-   
-
-//Controls
+//Keybinds
 function controls(event) {
   if (playerCharacter.lifes > 0) {
     switch (event.key.toLowerCase()) {
@@ -104,17 +102,17 @@ function controls(event) {
         playerCharacter.movement();
         break;
       case " ":
-        if(Proyectile.bulletCounter < 5){
-        shootingCannon();
-        proyectile.shootingSpeed = 30;
-        break;
+        if (Proyectile.bulletCounter < 5) {
+          shootingCannon();
+          proyectile.shootingSpeed = 30;
+          break;
         }
     }
   }
 }
 
-
-function checkLifes(){
+//Checking lifes of player
+function checkLifes() {
   if (playerCharacter.lifes == 0) {
     playerLifes.style.paddingRight = 0 + "px";
     playerLifes.style.width = 0 + "px";
@@ -136,8 +134,7 @@ function checkLifes(){
   }
 }
 
-//Pantalla final
-
+//Game over function
 function gameOver() {
   window.removeEventListener("keydown", controls);
   let explotionAnimation = document.querySelectorAll(".enemyExplotion");
@@ -149,18 +146,16 @@ function gameOver() {
   gameOverScreen.style.display = "block";
 }
 
-
-//Buttons
-
+//Game over screen transition
 let startScreen = document.getElementById("startScreen");
 let startButton = document.getElementById("startButton");
 
 startButton.addEventListener("click", function () {
-  setTimeout(function() {
-  startGame();
-  playField.style.display = "block";
-  startScreen.style.display = "none";
-}, 300);
+  setTimeout(function () {
+    startGame();
+    playField.style.display = "block";
+    startScreen.style.display = "none";
+  }, 300);
 });
 
 let gameOverScreen = document.getElementById("gameOverScreen");
@@ -171,5 +166,4 @@ gameOverButton.addEventListener("click", function () {
     startScreen.style.display = "block";
     gameOverScreen.style.display = "none";
   }, 300);
-});
-
+})

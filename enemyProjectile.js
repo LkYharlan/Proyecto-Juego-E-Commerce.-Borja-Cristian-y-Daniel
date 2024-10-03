@@ -30,7 +30,7 @@ class EnemyProjectile {
       this.hitbox(self);
     } else {
       this.sprite.remove();
-      clearArrayBulletEnemies();
+ /*      clearArrayBulletEnemies(); */
     }
   }
 
