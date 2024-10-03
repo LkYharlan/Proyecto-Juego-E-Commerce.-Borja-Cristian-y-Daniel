@@ -1,15 +1,15 @@
 class Enemy {
+  static speed = 12;
   constructor() {
     this.width = 40;
     this.height = 40;
-    this.speed = 12;
     let randomSpot = Math.floor(Math.random() * 500);
     this.ejeX = 900;
     this.ejeY = randomSpot;
     this.directionY = 0;
     this.directionX = -1;
     this.sprite = document.createElement("div");
-    this.interval = setInterval(this.movement.bind(this), 45);
+    this.interval = setInterval(this.movement.bind(this), 45)
     this.engine = document.createElement("div");
     this.explotion = document.createElement("div");
   }
@@ -41,17 +41,16 @@ class Enemy {
   }
 
   movement() {
-    let newAxisX = this.ejeX + this.speed * this.directionX;
+    let newAxisX = this.ejeX + Enemy.speed * this.directionX;
     if (newAxisX >= -1 && newAxisX < 1024 - this.width) {
       this.ejeX = newAxisX;
       this.sprite.style.left = this.ejeX + "px";
       this.engine.style.left = this.ejeX + 60 + "px";
       this.explotion.style.left = this.ejeX + "px";
       this.hitbox();
-      if (this.ejeX <= 0) {
-        this.sprite.remove();
-        this.engine.remove();
-      }
+    } else {
+      this.sprite.remove();
+      this.engine.remove();
     }
   }
 
@@ -64,13 +63,13 @@ class Enemy {
       this.remove();
       this.explotion.style.display = "block";
       playerCharacter.lifes--;
-      checkLifes();
+      checkLifes()
       playerCharacter.remove();
     }
   }
 
   remove() {
-    enemyExplotionSound.currentTime = 0;
+    enemyExplotionSound.currentTime = 0
     enemyExplotionSound.play();
     playField.removeChild(this.sprite);
     playField.removeChild(this.engine);
