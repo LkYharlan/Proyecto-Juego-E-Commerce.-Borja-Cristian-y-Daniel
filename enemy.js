@@ -1,8 +1,8 @@
 class Enemy {
+  static speed = 12;
   constructor() {
     this.width = 40;
     this.height = 40;
-    this.speed = 12;
     let randomSpot = Math.floor(Math.random() * 500);
     this.ejeX = 900;
     this.ejeY = randomSpot;
@@ -42,17 +42,18 @@ class Enemy {
   }
 
   movement() {
-    let newAxisX = this.ejeX + this.speed * this.directionX;
+    let newAxisX = this.ejeX + Enemy.speed * this.directionX;
     if (newAxisX >= -1 && newAxisX < 1024 - this.width) {
       this.ejeX = newAxisX;
       this.sprite.style.left = this.ejeX + "px";
       this.engine.style.left = this.ejeX + 60 + "px";
       this.explotion.style.left = this.ejeX + "px";
       this.hitbox();
-      if (this.ejeX <= 0) {
-        this.sprite.remove();
-        this.engine.remove();
-      }
+    } else {
+          
+            this.sprite.remove();
+            this.engine.remove();
+          
     }
   }
 
@@ -74,7 +75,7 @@ class Enemy {
    // Crea un nuevo proyectil desde la posición del enemigo.
    shootingCannon() {
     let enemyProjectile = new EnemyProjectile(this); 
- /*    arrEnemyProjectile.push(enemyProjectile); // array para almacenar proyectiles enemigos. */
+    arrEnemyProjectile.push(enemyProjectile); // array para almacenar proyectiles enemigos.
     enemyProjectile.insert();
   }
 

@@ -5,7 +5,7 @@ let playerLifes = document.getElementById("lifes");
 
 let enemiesArray = [];
 let proyectile;
-/* let arrEnemyProjectile = []; */
+let arrEnemyProjectile = [];
 let basicEnemy;
 let repeatEnemy;
 let repeatMeteorite;
@@ -73,15 +73,15 @@ function shootingCannon() {
   proyectileSound.play();
   
 }
-/* //limpia array de Proyectiles Enemigos
+
+//limpia array de Proyectiles Enemigos
 function clearArrayBulletEnemies (){
   arrEnemyProjectile = document.querySelectorAll(".enemyProjectile");
   for (let i = 0; i < arrEnemyProjectile.length; i++) {
     playField.removeChild(arrEnemyProjectile[i]);
   }
 }
-    */
-
+   
 
 //Controls
 function controls(event) {

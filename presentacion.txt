@@ -1,0 +1,37 @@
+Uno de los problemas o bloqueos con los que tuvimos que lidiar fue la perdida de contexto o del this, sobre todo en los setItervals y en las funciones callbacks.
+
+Para solventar este problema hay varias formas de hacerlo :
+
+Implementamos dos en nuestro codigo:
+
+La primera es guardar el this en una variable let self = this y luego utilizar dicha variable.
+
+La segunda y quizás la más elegante es utilizar el bind(). En ECMASCript 5 se implemento el bind().
+
+    this.shootingInterval = setInterval(this.shootingCannon.bind(this), 500);
+
+
+
+ 
+
+1ª Voy a hablar del codigo de las colisiones de los meteoritos. 
+
+    - Con este pedazo de codigo controlamos las colisiones del meteorito.
+    - Incialmente fue concebida para que el meteorito colisionara solo con el player y 
+        pero luego se nos ocurrio que el meteorito pudiera colisionar con los enemigos. 
+    - La idea a groso modo es simular una batalla en plan cinturón de asteroides.
+
+2º Bloqueos más importantes y soluciones.
+
+    - El this, --> bind() una función que guarda el this 
+    - Los clearIntervals
+    - Uso del foreach para hacer la limpieza de arrays
+    - Reinicio con condiciones iniciales 
+
+3ª Mejoras futuras
+
+- Enemigos con disparos y movimientos nuevos.
+- Boss final
+- Nuevas armas para el player 1.
+- Player dos.
+- Añadir una pantalla de ranking al final de juego.

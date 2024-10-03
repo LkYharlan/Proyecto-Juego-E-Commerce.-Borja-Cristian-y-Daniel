@@ -28,11 +28,9 @@ class EnemyProjectile {
       this.sprite.style.left = this.ejeX + "px";
       let self = this;
       this.hitbox(self);
-    }
-   
-    if (this.ejeX < 60) {
-    clearArrayBulletEnemies();
+    } else {
       this.sprite.remove();
+      clearArrayBulletEnemies();
     }
   }
 
