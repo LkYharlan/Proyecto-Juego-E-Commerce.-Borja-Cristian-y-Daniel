@@ -10,7 +10,7 @@ class Enemy {
     this.directionX = -1;
     this.sprite = document.createElement("div");
     this.interval = setInterval(this.movement.bind(this), 45);
-    this.shootingInterval = setInterval(this.shootingCannon.bind(this), 2000); 
+    this.shootingInterval = setInterval(this.shootingCannon.bind(this), 500); 
     this.engine = document.createElement("div");
     this.explotion = document.createElement("div");
   }
@@ -74,6 +74,7 @@ class Enemy {
    // Crea un nuevo proyectil desde la posición del enemigo.
    shootingCannon() {
     let enemyProjectile = new EnemyProjectile(this); 
+ /*    arrEnemyProjectile.push(enemyProjectile); // array para almacenar proyectiles enemigos. */
     enemyProjectile.insert();
   }
 
