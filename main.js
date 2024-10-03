@@ -37,7 +37,6 @@ function startGame() {
   Player.score = 0;
   scoreDiv.innerText = `Score: ${Player.score}`;
 
-
   playerCharacter.ejeX = 90;
   playerCharacter.ejeY = 265;
   playerCharacter.lifes = 3;
