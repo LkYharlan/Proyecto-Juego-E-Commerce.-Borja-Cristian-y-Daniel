@@ -58,6 +58,7 @@ function startGame() {
     meteorite.insert();
   }, 6000);
 
+  //Keybind listeners
   movePrompt = window.addEventListener("keydown", controls);
 
   moveClearInter = window.addEventListener("keyup", function () {
@@ -79,7 +80,7 @@ function shootingCannon() {
   proyectileSound.play();
 }
 
-//Controls
+//Keybinds
 function controls(event) {
   if (playerCharacter.lifes > 0) {
     switch (event.key.toLowerCase()) {
