@@ -106,6 +106,7 @@ body {
 
 #lifes {
     position: absolute;
+    transition-duration: 1s;
     background-image: url("/assets/playerMini.png");
     background-repeat: repeat-x;
     height: 35px;
