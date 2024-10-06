@@ -66,7 +66,7 @@ class Enemy {
       this.remove();
       this.explotion.style.display = "block";
       playerCharacter.lifes--;
-      checkLifes()
+      checkLifes();
       playerCharacter.remove();
     }
   }

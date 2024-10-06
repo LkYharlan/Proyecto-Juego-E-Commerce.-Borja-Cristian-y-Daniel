@@ -81,6 +81,9 @@ body {
 
 #playField {
     position: relative;
+    border: 6px solid rgb(22, 151, 35);
+    box-shadow: 10px 10px 23px 2px rgba(22, 151, 35);
+
     background-image: url("/assets/interface_assets/spaceSkyBox.jpg");
     animation: movingBackground 40s infinite linear;
     width: 1024px;
