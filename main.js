@@ -5,7 +5,7 @@ let finalScoreDiv = document.getElementById("finalScore");
 let playerLifes = document.getElementById("lifes");
 
 let enemiesArray = [];
-let proyectile;
+let projectile;
 let arrEnemyProjectile = [];
 let basicEnemy;
 let repeatEnemy;
@@ -19,7 +19,7 @@ scoreDiv.innerText = `Score: ${Player.score}`;
 //Audio files
 let gameOverSong = new Audio("./assets/gameover_song.mp3");
 let gameplaySong = new Audio("./assets/gameplay_song.mp3");
-let proyectileSound = new Audio("./assets/laser_player.mp3");
+let projectileSound = new Audio("./assets/laser_player.mp3");
 let playerExplotionSound = new Audio("./assets/player_explotion.mp3");
 let enemyExplotionSound = new Audio("./assets/enemy_explotion.mp3");
 
@@ -74,11 +74,11 @@ function startGame() {
 
 //Shooting function
 function shootingCannon() {
-  proyectile = new Proyectile();
-  proyectile.insert();
-  proyectile.shooting();
-  proyectileSound.currentTime = 0;
-  proyectileSound.play();
+  projectile = new Projectile();
+  projectile.insert();
+  projectile.shooting();
+  projectileSound.currentTime = 0;
+  projectileSound.play();
 }
 
 //Keybinds
@@ -102,9 +102,9 @@ function controls(event) {
         playerCharacter.movement();
         break;
       case " ":
-        if (Proyectile.bulletCounter < 5) {
+        if (Projectile.bulletCounter < 5) {
           shootingCannon();
-          proyectile.shootingSpeed = 30;
+          projectile.shootingSpeed = 30;
           break;
         }
     }

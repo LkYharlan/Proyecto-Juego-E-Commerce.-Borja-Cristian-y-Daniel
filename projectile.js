@@ -1,4 +1,4 @@
-class Proyectile {
+class Projectile {
   static bulletCounter = 0;
   constructor() {
     this.width = 10;
@@ -15,14 +15,14 @@ class Proyectile {
   }
 
   insert() {
-    this.sprite.setAttribute("class", "proyectile");
+    this.sprite.setAttribute("class", "projectile");
     this.sprite.style.width = this.width + "px";
     this.sprite.style.height = this.height + "px";
     this.sprite.style.top = this.ejeY + "px";
     this.sprite.style.left = this.ejeX + "px";
     this.sprite.style.position = "absolute";
     playField.appendChild(this.sprite);
-    Proyectile.bulletCounter++;
+    Projectile.bulletCounter++;
   }
 
   shooting() {
@@ -62,7 +62,7 @@ class Proyectile {
   }
 
   remove() {
-    Proyectile.bulletCounter -= 1;
+    Projectile.bulletCounter -= 1;
     playField.removeChild(this.sprite);
     clearInterval(this.interval);
   }
