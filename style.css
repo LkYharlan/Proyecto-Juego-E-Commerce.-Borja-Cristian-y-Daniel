@@ -1,5 +1,5 @@
 body {
-    background-image: url(/assets/background.jpg);
+    background-image: url("./assets/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     font-family: "VT323", monospace;
@@ -50,15 +50,15 @@ body {
     height: 50px;
     left: 412px;
     top: 380px;
-    background-image: url(/assets/interface_assets/botonStartUnpressed.png);
+    background-image: url("./assets/interface_assets/botonStartUnpressed.png");
 }
 
 #startButton:active {
-    background-image: url(/assets/interface_assets/botonStartPressed.png);
+    background-image: url("./assets/interface_assets/botonStartPressed.png");
 }
 
 #gameOverButton {
-    background-image: url("assets/interface_assets/botonRestartUnpressed.png");
+    background-image: url(".assets/interface_assets/botonRestartUnpressed.png");
     position: absolute;
     width: 200px;
     height: 50px;
@@ -67,13 +67,13 @@ body {
 }
 
 #gameOverButton:active {
-    background-image: url('assets/interface_assets/botonRestartPressed.png');
+    background-image: url(".assets/interface_assets/botonRestartPressed.png");
 }
 
 #gameOverScreen {
     position: relative;
     border: 5px solid rgb(22, 151, 35);
-    background-image: url("/assets/interface_assets/gameOver.jpg");
+    background-image: url("./assets/interface_assets/gameOver.jpg");
     background-size: cover;
     width: 1024px;
     height: 600px;
@@ -86,7 +86,7 @@ body {
 #playField {
     position: relative;
     border: 6px solid rgb(22, 151, 35);
-    background-image: url("/assets/interface_assets/spaceSkyBox.jpg");
+    background-image: url("./assets/interface_assets/spaceSkyBox.jpg");
     animation: movingBackground 40s infinite linear;
     width: 1024px;
     height: 600px;
@@ -99,7 +99,7 @@ body {
     position: absolute;
     width: 1024px;
     height: 40px;
-    background-image: url("/assets/interface_assets/score_bar.jpg");
+    background-image: url("./assets/interface_assets/score_bar.jpg");
     background-size: cover;
     top: 560px
 }
@@ -107,7 +107,7 @@ body {
 #lifes {
     position: absolute;
     transition-duration: 1s;
-    background-image: url("/assets/playerMini.png");
+    background-image: url("./assets/playerMini.png");
     background-repeat: repeat-x;
     height: 35px;
     width: 30px;
@@ -137,7 +137,7 @@ body {
 
 #player {
     padding: 20px;
-    background-image: url("/assets/player.png");
+    background-image: url("./assets/player.png");
     background-repeat: no-repeat;
     background-size: 80px;
 }
@@ -161,7 +161,7 @@ body {
 
 .basicEnemy {
     padding: 20px;
-    background-image: url("/assets/Enemy1.1.png");
+    background-image: url("./assets/Enemy1.1.png");
     background-repeat: no-repeat;
     background-size: 80px;
 }
@@ -184,7 +184,7 @@ body {
 
 .meteorite {
     padding: 20px;
-    background-image: url("/assets/meteorite.png");
+    background-image: url("./assets/meteorite.png");
     background-repeat: no-repeat;
     background-size: 49px;
 }
@@ -207,139 +207,139 @@ body {
 
 @keyframes shot {
     0% {
-        background-image: url("/assets/player_shot/shot4_2.png");
+        background-image: url("./assets/player_shot/shot4_2.png");
     }
 
     100% {
-        background-image: url("/assets/player_shot/shot4_3.png");
+        background-image: url("./assets/player_shot/shot4_3.png");
     }
 }
 
 @keyframes playerEngine {
     0% {
-        background-image: url("/assets/player_flight/Ship4_normal_flight_001.png");
+        background-image: url("./assets/player_flight/Ship4_normal_flight_001.png");
     }
 
     25% {
-        background-image: url("/assets/player_flight/Ship4_normal_flight_003.png");
+        background-image: url("./assets/player_flight/Ship4_normal_flight_003.png");
     }
 
     75% {
-        background-image: url("/assets/player_flight/Ship4_normal_flight_004.png");
+        background-image: url("./assets/player_flight/Ship4_normal_flight_004.png");
     }
 
     100% {
-        background-image: url("/assets/player_flight/Ship4_normal_flight_006.png");
+        background-image: url("./assets/player_flight/Ship4_normal_flight_006.png");
     }
 }
 
 @keyframes playerExplotion {
     0% {
-        background-image: url("/assets/player_Explosion/Ship4_Explosion_000.png");
+        background-image: url("./assets/player_Explosion/Ship4_Explosion_000.png");
     }
 
     10% {
-        background-image: url("/assets/player_Explosion/Ship4_Explosion_003.png");
+        background-image: url("./assets/player_Explosion/Ship4_Explosion_003.png");
     }
 
     20% {
-        background-image: url("/assets/player_Explosion/Ship4_Explosion_005.png");
+        background-image: url("./assets/player_Explosion/Ship4_Explosion_005.png");
     }
 
     30% {
-        background-image: url("/assets/player_Explosion/Ship4_Explosion_007.png");
+        background-image: url("./assets/player_Explosion/Ship4_Explosion_007.png");
     }
 
     40% {
-        background-image: url("/assets/player_Explosion/Ship4_Explosion_008.png");
+        background-image: url("./assets/player_Explosion/Ship4_Explosion_008.png");
     }
 
     50% {
-        background-image: url("/assets/player_Explosion/Ship4_Explosion_012.png");
+        background-image: url("./assets/player_Explosion/Ship4_Explosion_012.png");
     }
 
     60% {
-        background-image: url("/assets/player_Explosion/Ship4_Explosion_013.png");
+        background-image: url("./assets/player_Explosion/Ship4_Explosion_013.png");
     }
 
     70% {
-        background-image: url("/assets/player_Explosion/Ship4_Explosion_015.png");
+        background-image: url("./assets/player_Explosion/Ship4_Explosion_015.png");
     }
 
     80% {
-        background-image: url("/assets/player_Explosion/Ship4_Explosion_018.png");
+        background-image: url("./assets/player_Explosion/Ship4_Explosion_018.png");
     }
 
     90% {
-        background-image: url("/assets/player_Explosion/Ship4_Explosion_019.png");
+        background-image: url("./assets/player_Explosion/Ship4_Explosion_019.png");
     }
 
     100% {
-        background-image: url("/assets/player_Explosion/Ship4_Explosion_020.png");
+        background-image: url("./assets/player_Explosion/Ship4_Explosion_020.png");
     }
 }
 
 @keyframes enemyEngine {
     0% {
-        background-image: url("/assets/enemy_flight/Ship3_normal_flight_001.png");
+        background-image: url("./assets/enemy_flight/Ship3_normal_flight_001.png");
     }
 
     25% {
-        background-image: url("/assets/enemy_flight/Ship3_normal_flight_003.png");
+        background-image: url("./assets/enemy_flight/Ship3_normal_flight_003.png");
     }
 
     75% {
-        background-image: url("/assets/enemy_flight/Ship3_normal_flight_005.png");
+        background-image: url("./assets/enemy_flight/Ship3_normal_flight_005.png");
     }
 
     100% {
-        background-image: url("/assets/enemy_flight/Ship3_normal_flight_007.png");
+        background-image: url("./assets/enemy_flight/Ship3_normal_flight_007.png");
     }
 }
 
 @keyframes enemyExplotion {
     0% {
-        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_000.png");
+        background-image: url("./assets/enemy_Explosion/Ship3_Explosion_000.png");
     }
 
     10% {
-        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_004.png");
+        background-image: url("./assets/enemy_Explosion/Ship3_Explosion_004.png");
     }
 
     20% {
-        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_005.png");
+        background-image: url("./assets/enemy_Explosion/Ship3_Explosion_005.png");
     }
 
     30% {
-        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_007.png");
+        background-image: url("./assets/enemy_Explosion/Ship3_Explosion_007.png");
     }
 
     30% {
-        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_009.png");
+        background-image: url("./assets/enemy_Explosion/Ship3_Explosion_009.png");
     }
 
     50% {
-        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_012.png");
+        background-image: url("./assets/enemy_Explosion/Ship3_Explosion_012.png");
     }
 
     60% {
-        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_013.png");
+        background-image: url("./assets/enemy_Explosion/Ship3_Explosion_013.png");
     }
 
     70% {
-        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_015.png");
+        background-image: url("./assets/enemy_Explosion/Ship3_Explosion_015.png");
     }
 
     80% {
-        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_018.png");
+        background-image: url("./assets/enemy_Explosion/Ship3_Explosion_018.png");
     }
 
     90% {
-        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_019.png");
+        background-image: url("./assets/enemy_Explosion/Ship3_Explosion_019.png");
     }
 
     100% {
-        background-image: url("/assets/enemy_Explosion/Ship3_Explosion_021.png");
+        background-image: url("./assets/enemy_Explosion/Ship3_Explosion_021.png");
     }
 }
 
