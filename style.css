@@ -11,7 +11,7 @@ body {
 #startScreen {
     position: relative;
     border: 5px solid rgb(22, 151, 35);
-    background-image: url("/assets/interface_assets/start_screen.png");
+    background-image: url("./assets/interface_assets/start_screen.png");
     background-size: cover;
     width: 1024px;
     height: 600px;
@@ -58,7 +58,7 @@ body {
 }
 
 #gameOverButton {
-    background-image: url(".assets/interface_assets/botonRestartUnpressed.png");
+    background-image: url("./assets/interface_assets/botonRestartUnpressed.png");
     position: absolute;
     width: 200px;
     height: 50px;
@@ -67,7 +67,7 @@ body {
 }
 
 #gameOverButton:active {
-    background-image: url(".assets/interface_assets/botonRestartPressed.png");
+    background-image: url("./assets/interface_assets/botonRestartPressed.png");
 }
 
 #gameOverScreen {
