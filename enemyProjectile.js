@@ -55,5 +55,3 @@ class EnemyProjectile {
   }
 }
 
-
-//prueba en develop
